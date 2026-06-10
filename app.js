@@ -1,7 +1,6 @@
 const realms = [
   {
     id: "being",
-    path: "realms/ocean-of-being.html",
     numeral: "I",
     name: "The Ocean of Being",
     shortName: "Ocean of Being",
@@ -9,12 +8,11 @@ const realms = [
     prompt: "What remains when all else falls away?",
     glyph: "≋",
     color: "#69c8dc",
-    points: "0,0 605,0 605,140 700,350 570,660 0,670",
+    points: "0,165 605,140 700,350 570,660 0,670",
     label: [300, 375],
   },
   {
     id: "perception",
-    path: "realms/theatre-of-perception.html",
     numeral: "II",
     name: "The Theatre of Perception",
     shortName: "Theatre of Perception",
@@ -22,12 +20,11 @@ const realms = [
     prompt: "How is your world being made?",
     glyph: "◉",
     color: "#c58fd9",
-    points: "605,0 1330,0 1330,70 1375,570 1160,760 610,650 690,365",
+    points: "575,90 1330,70 1375,570 1160,760 610,650 690,365",
     label: [960, 370],
   },
   {
     id: "thought",
-    path: "realms/forge-of-thought.html",
     numeral: "III",
     name: "The Forge of Thought",
     shortName: "Forge of Thought",
@@ -35,12 +32,11 @@ const realms = [
     prompt: "Which thoughts are shaping you?",
     glyph: "✺",
     color: "#ed9d56",
-    points: "1330,0 2048,0 2048,675 1715,690 1370,570",
+    points: "1310,95 2048,0 2048,675 1715,690 1370,570",
     label: [1690, 345],
   },
   {
     id: "emotion",
-    path: "realms/field-of-emotion.html",
     numeral: "IV",
     name: "The Field of Emotion",
     shortName: "Field of Emotion",
@@ -53,7 +49,6 @@ const realms = [
   },
   {
     id: "action",
-    path: "realms/path-of-action.html",
     numeral: "V",
     name: "The Path of Action",
     shortName: "Path of Action",
@@ -66,7 +61,6 @@ const realms = [
   },
   {
     id: "meaning",
-    path: "realms/mountain-of-meaning.html",
     numeral: "VI",
     name: "The Mountain of Meaning",
     shortName: "Mountain of Meaning",
@@ -90,7 +84,7 @@ const svgNamespace = "http://www.w3.org/2000/svg";
 
 function createHotspot(realm) {
   const link = document.createElementNS(svgNamespace, "a");
-  link.setAttribute("href", realm.path);
+  link.setAttribute("href", `#${realm.id}`);
   link.setAttribute("aria-label", `Explore ${realm.name}`);
   link.dataset.realm = realm.id;
 
@@ -123,7 +117,7 @@ function createCard(realm) {
   const card = document.createElement("a");
   card.className = "realm-card";
   card.id = realm.id;
-  card.href = realm.path;
+  card.href = `#realm-map`;
   card.dataset.realm = realm.id;
   card.style.setProperty("--realm-color", realm.color);
   card.innerHTML = `
@@ -141,6 +135,12 @@ function createCard(realm) {
   card.addEventListener("pointerleave", () => highlightMap(realm.id, false));
   card.addEventListener("focus", () => highlightMap(realm.id, true));
   card.addEventListener("blur", () => highlightMap(realm.id, false));
+  card.addEventListener("click", () => {
+    window.setTimeout(() => {
+      const hotspot = hotspotLayer.querySelector(`[data-realm="${realm.id}"]`);
+      hotspot?.focus();
+    }, 450);
+  });
 
   realmGrid.append(card);
 }

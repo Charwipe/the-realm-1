@@ -8,7 +8,7 @@ const realms = [
     prompt: "What remains when all else falls away?",
     glyph: "≋",
     color: "#69c8dc",
-    points: "0,0 605,0 605,140 700,350 570,660 0,670",
+    points: "0,165 605,140 700,350 570,660 0,670",
     label: [300, 375],
   },
   {
@@ -20,7 +20,7 @@ const realms = [
     prompt: "How is your world being made?",
     glyph: "◉",
     color: "#c58fd9",
-    points: "605,0 1330,0 1330,70 1375,570 1160,760 610,650 690,365",
+    points: "575,90 1330,70 1375,570 1160,760 610,650 690,365",
     label: [960, 370],
   },
   {
@@ -32,7 +32,7 @@ const realms = [
     prompt: "Which thoughts are shaping you?",
     glyph: "✺",
     color: "#ed9d56",
-    points: "1330,0 2048,0 2048,675 1715,690 1370,570",
+    points: "1310,95 2048,0 2048,675 1715,690 1370,570",
     label: [1690, 345],
   },
   {

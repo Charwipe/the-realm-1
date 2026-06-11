@@ -1,93 +1,20 @@
-const realms = [
-  {
-    id: "being",
-    path: "realms/ocean-of-being.html",
-    numeral: "I",
-    name: "The Ocean of Being",
-    shortName: "Ocean of Being",
-    description: "Presence, awareness, and the mystery beneath all experience.",
-    prompt: "What remains when all else falls away?",
-    glyph: "≋",
-    color: "#69c8dc",
-    points: "0,0 605,0 605,140 700,350 570,660 0,670",
-    label: [300, 375],
-  },
-  {
-    id: "perception",
-    path: "realms/theatre-of-perception.html",
-    numeral: "II",
-    name: "The Theatre of Perception",
-    shortName: "Theatre of Perception",
-    description: "Sensation, imagination, and the stage upon which reality appears.",
-    prompt: "How is your world being made?",
-    glyph: "◉",
-    color: "#c58fd9",
-    points: "605,0 1330,0 1330,70 1375,570 1160,760 610,650 690,365",
-    label: [960, 370],
-  },
-  {
-    id: "thought",
-    path: "realms/forge-of-thought.html",
-    numeral: "III",
-    name: "The Forge of Thought",
-    shortName: "Forge of Thought",
-    description: "Ideas, beliefs, and the bright machinery of the thinking mind.",
-    prompt: "Which thoughts are shaping you?",
-    glyph: "✺",
-    color: "#ed9d56",
-    points: "1330,0 2048,0 2048,675 1715,690 1370,570",
-    label: [1690, 345],
-  },
-  {
-    id: "emotion",
-    path: "realms/field-of-emotion.html",
-    numeral: "IV",
-    name: "The Field of Emotion",
-    shortName: "Field of Emotion",
-    description: "Feeling, longing, and the inner weather that colors our days.",
-    prompt: "What is asking to be felt?",
-    glyph: "♡",
-    color: "#ec88a9",
-    points: "0,610 610,600 905,840 800,1365 0,1365",
-    label: [370, 930],
-  },
-  {
-    id: "action",
-    path: "realms/path-of-action.html",
-    numeral: "V",
-    name: "The Path of Action",
-    shortName: "Path of Action",
-    description: "Choice, practice, and the winding road from intention to change.",
-    prompt: "What is your next true step?",
-    glyph: "↟",
-    color: "#dac071",
-    points: "610,580 1260,570 1470,800 1250,1365 760,1365 865,870",
-    label: [1085, 900],
-  },
-  {
-    id: "meaning",
-    path: "realms/mountain-of-meaning.html",
-    numeral: "VI",
-    name: "The Mountain of Meaning",
-    shortName: "Mountain of Meaning",
-    description: "Purpose, belonging, and the summit from which life takes shape.",
-    prompt: "What makes the climb worthwhile?",
-    glyph: "△",
-    color: "#9db5e9",
-    points: "1270,570 2048,540 2048,1365 1220,1365 1420,820",
-    label: [1670, 900],
-  },
-];
+// @ts-check
 
-const hotspotLayer = document.querySelector("#hotspot-layer");
-const realmGrid = document.querySelector("#realm-grid");
-const mapStage = document.querySelector("#map-stage");
-const tooltip = document.querySelector("#map-tooltip");
-const tooltipGlyph = tooltip.querySelector(".map-tooltip__glyph");
-const tooltipName = tooltip.querySelector("strong");
+import { cartographer, realmDomains, supremeEntity } from "./data/realm.js";
+
+const realms = realmDomains;
+
+const hotspotLayer = /** @type {SVGSVGElement} */ (document.querySelector("#hotspot-layer"));
+const realmGrid = /** @type {HTMLElement} */ (document.querySelector("#realm-grid"));
+const mapStage = /** @type {HTMLElement} */ (document.querySelector("#map-stage"));
+const tooltip = /** @type {HTMLElement} */ (document.querySelector("#map-tooltip"));
+const tooltipGlyph = /** @type {HTMLElement} */ (tooltip.querySelector(".map-tooltip__glyph"));
+const tooltipName = /** @type {HTMLElement} */ (tooltip.querySelector("strong"));
+const tooltipDetail = /** @type {HTMLElement} */ (tooltip.querySelector("small"));
 
 const svgNamespace = "http://www.w3.org/2000/svg";
 
+/** @param {import("./data/realm.js").RealmDomain} realm */
 function createHotspot(realm) {
   const link = document.createElementNS(svgNamespace, "a");
   link.setAttribute("href", realm.path);
@@ -119,6 +46,7 @@ function createHotspot(realm) {
   link.addEventListener("blur", deactivate);
 }
 
+/** @param {import("./data/realm.js").RealmDomain} realm */
 function createCard(realm) {
   const card = document.createElement("a");
   card.className = "realm-card";
@@ -131,8 +59,9 @@ function createCard(realm) {
     <span class="realm-card__glyph" aria-hidden="true">${realm.glyph}</span>
     <span class="realm-card__body">
       <span class="realm-card__name">${realm.name}</span>
-      <span class="realm-card__description">${realm.description}</span>
-      <span class="realm-card__prompt">${realm.prompt}</span>
+      <span class="realm-card__deity">Ruled by ${realm.deity.name}, ${realm.deity.title}</span>
+      <span class="realm-card__description">${realm.shortDescription}</span>
+      <span class="realm-card__prompt">${realm.interaction.entryQuestion}</span>
     </span>
     <span class="realm-card__arrow" aria-hidden="true">↗</span>
   `;
@@ -145,11 +74,13 @@ function createCard(realm) {
   realmGrid.append(card);
 }
 
+/** @param {import("./data/realm.js").RealmDomain} realm @param {SVGAElement} hotspot */
 function showRealm(realm, hotspot) {
   hotspot.classList.add("is-active");
   mapStage.classList.add("has-active-realm");
   tooltipGlyph.textContent = realm.glyph;
   tooltipName.textContent = realm.name;
+  tooltipDetail.textContent = `${realm.deity.name} · ${realm.deity.title}`;
   tooltip.style.setProperty("--realm-color", realm.color);
 
   const xPercent = (realm.label[0] / 2048) * 100;
@@ -161,6 +92,7 @@ function showRealm(realm, hotspot) {
   document.querySelector(`.realm-card[data-realm="${realm.id}"]`)?.classList.add("is-active");
 }
 
+/** @param {SVGAElement} hotspot */
 function hideRealm(hotspot) {
   hotspot.classList.remove("is-active");
   mapStage.classList.remove("has-active-realm");
@@ -168,13 +100,38 @@ function hideRealm(hotspot) {
   document.querySelector(`.realm-card[data-realm="${hotspot.dataset.realm}"]`)?.classList.remove("is-active");
 }
 
+/** @param {string} realmId @param {boolean} isActive */
 function highlightMap(realmId, isActive) {
-  const hotspot = hotspotLayer.querySelector(`[data-realm="${realmId}"]`);
+  const hotspot = /** @type {SVGAElement | null} */ (hotspotLayer.querySelector(`[data-realm="${realmId}"]`));
   const realm = realms.find((item) => item.id === realmId);
   if (!hotspot || !realm) return;
   if (isActive) showRealm(realm, hotspot);
   else hideRealm(hotspot);
 }
+
+function renderMythologyFrame() {
+  const cartographerHeading = document.querySelector("#cartographer-heading");
+  const cartographerBody = document.querySelector("#cartographer-copy-body");
+  const mythologyText = document.querySelector("#mythology-text");
+  const supremeName = document.querySelector("#supreme-entity-name");
+
+  if (cartographerHeading) cartographerHeading.textContent = `Meet ${cartographer.name}`;
+  if (cartographerBody) {
+    cartographerBody.replaceChildren(
+      ...cartographer.introduction.map((paragraph) => {
+        const element = document.createElement("p");
+        element.textContent = paragraph;
+        return element;
+      }),
+    );
+  }
+  if (mythologyText) {
+    mythologyText.textContent = `Each realm is ruled by a deity with a gift, a wound, and a question. Even the gods orient themselves toward ${supremeEntity.name}, ${supremeEntity.title.toLowerCase()}. ${cartographer.name} carries a lantern between their territories, helping each traveler find the road their question has opened.`;
+  }
+  if (supremeName) supremeName.textContent = supremeEntity.name;
+}
+
+renderMythologyFrame();
 
 realms.forEach((realm) => {
   createHotspot(realm);

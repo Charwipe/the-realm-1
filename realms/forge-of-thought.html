@@ -3,20 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore one of the six territories of REALM." />
-    <title>Realm — REALM</title>
+    <meta
+      name="description"
+      content="The Thought Forge is one of the six great regions of the Realm."
+    />
+    <title>The Thought Forge — REALM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="realm-page.css" />
+    <link rel="stylesheet" href="thought-forge.css" />
   </head>
-  <body class="realm-page" data-domain-id="forge-of-thought">
-    <div class="aurora aurora--one" aria-hidden="true"></div>
-    <div class="aurora aurora--two" aria-hidden="true"></div>
-    <div class="star-field" aria-hidden="true"></div>
+  <body class="realm-page thought-forge-page">
+    <div class="forge-sky" aria-hidden="true">
+      <div class="forge-cloud forge-cloud--one"></div>
+      <div class="forge-cloud forge-cloud--two"></div>
+      <div class="forge-cloud forge-cloud--three"></div>
+      <div class="forge-lightning forge-lightning--one"></div>
+      <div class="forge-lightning forge-lightning--two"></div>
+      <div class="forge-embers"></div>
+    </div>
 
-    <header class="site-header realm-page__header">
+    <header class="site-header realm-page__header forge-header">
       <a class="brand" href="../index.html" aria-label="REALM home">
         <span class="brand__mark" aria-hidden="true">✦</span>
         <span>REALM</span>
@@ -24,93 +36,172 @@
       <a class="back-link" href="../index.html#realm-map"><span aria-hidden="true">←</span> Return to the map</a>
     </header>
 
-    <main class="realm-page__main" id="realm-content">
-      <section class="realm-entry" aria-labelledby="realm-title">
-        <p class="realm-entry__number" id="realm-number"></p>
-        <div class="realm-entry__sigil" id="realm-glyph" aria-hidden="true"></div>
-        <p class="realm-entry__subtitle" id="realm-subtitle"></p>
-        <h1 id="realm-title">An uncharted realm</h1>
-        <p class="realm-entry__description" id="realm-description"></p>
-        <p class="realm-entry__supreme" id="supreme-reference"></p>
+    <main>
+      <section class="forge-hero" aria-labelledby="forge-title">
+        <div class="forge-hero__anvil" aria-hidden="true">
+          <span class="forge-hero__spark forge-hero__spark--one"></span>
+          <span class="forge-hero__spark forge-hero__spark--two"></span>
+          <span class="forge-hero__spark forge-hero__spark--three"></span>
+        </div>
+        <p class="forge-eyebrow">One of the six great regions</p>
+        <h1 id="forge-title">The Thought Forge</h1>
+        <p class="forge-hero__subtitle">Deep within the storm clouds, the Forger shapes possibility into reality.</p>
+        <a class="forge-scroll" href="#overview">
+          <span>Enter the archive</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </section>
 
-      <div class="realm-story-grid">
-        <section class="realm-panel deity-panel" aria-labelledby="deity-heading">
-          <p class="realm-panel__kicker">The leading deity · <span id="deity-archetype"></span></p>
-          <h2 id="deity-heading"><span id="deity-name"></span> <small id="deity-title"></small></h2>
-          <dl class="realm-facets">
-            <div><dt>Desire</dt><dd id="deity-desire"></dd></div>
-            <div><dt>Wound</dt><dd id="deity-wound"></dd></div>
-            <div><dt>Gift</dt><dd id="deity-gift"></dd></div>
-            <div><dt>Shadow</dt><dd id="deity-shadow"></dd></div>
-          </dl>
-          <p class="realm-voice"><span>Voice</span><span id="deity-voice"></span></p>
-          <ul class="symbol-list" id="deity-symbols" aria-label="Deity symbols"></ul>
-        </section>
+      <div class="forge-layout">
+        <aside class="forge-toc" aria-labelledby="contents-heading">
+          <div class="forge-toc__inner">
+            <p class="forge-toc__label">Lore index</p>
+            <h2 id="contents-heading">Contents</h2>
+            <nav aria-label="Thought Forge contents">
+              <ol>
+                <li><a href="#overview"><span>01</span>Overview</a></li>
+                <li><a href="#the-forger"><span>02</span>The Forger</a></li>
+                <li><a href="#black-substance"><span>03</span>The Black Substance</a></li>
+                <li><a href="#servants"><span>04</span>The Servants of the Forge</a></li>
+                <li><a href="#great-selection"><span>05</span>The Great Selection</a></li>
+                <li><a href="#thunder-lightning"><span>06</span>Thunder and Lightning</a></li>
+                <li><a href="#sayings"><span>07</span>Common Sayings</a></li>
+                <li><a href="#cartographer-note"><span>08</span>Cartographer's Note</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
 
-        <section class="realm-panel narrative-panel" aria-labelledby="narrative-heading">
-          <p class="realm-panel__kicker">The dramatic threshold</p>
-          <h2 id="narrative-heading">The story awaiting you</h2>
-          <p class="narrative-premise" id="narrative-premise"></p>
-          <p id="narrative-conflict"></p>
-          <blockquote id="narrative-question"></blockquote>
-          <dl class="realm-facets realm-facets--compact">
-            <div><dt>Transformation</dt><dd id="narrative-transformation"></dd></div>
-            <div><dt>Danger</dt><dd id="narrative-danger"></dd></div>
-          </dl>
-          <p class="narrative-invitation" id="narrative-invitation"></p>
-        </section>
+        <article class="forge-article">
+          <header class="forge-article__header">
+            <p>Archive entry · The Thought Forge</p>
+            <span aria-hidden="true">✦</span>
+          </header>
+
+          <section class="forge-lore-section forge-lore-section--lead" id="overview" aria-labelledby="overview-heading">
+            <p class="forge-section-number" aria-hidden="true">I</p>
+            <h2 id="overview-heading">Overview</h2>
+            <div class="forge-prose">
+              <p>The Thought Forge is one of the six great regions of the Realm.</p>
+              <p>Deep within the darkest storm clouds lies a hidden cavern.</p>
+              <p>Inside sits a divine being known as the Forger.</p>
+              <p>The Forger shapes reality itself.</p>
+              <p>He works on a colossal anvil using a mysterious black substance found at the center of storm clouds.</p>
+              <p>Thunder is the sound of his hammer.</p>
+              <p>Lightning is the glow of the forge escaping through cracks in the clouds.</p>
+              <p>Storms are therefore acts of creation rather than destruction.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="the-forger" aria-labelledby="forger-heading">
+            <p class="forge-section-number" aria-hidden="true">II</p>
+            <h2 id="forger-heading">The Forger</h2>
+            <div class="forge-prose">
+              <p>The gods call him the Maker of Shapes.</p>
+              <p>The Cartographer simply calls him the Forger.</p>
+              <p>He never leaves the depths of the Forge.</p>
+              <p>He does not create from nothing.</p>
+              <p>He waits for fragments of possibility to be brought before him.</p>
+              <p>Then he reshapes them into something that can endure.</p>
+              <p>It's said that every mountain, creature, kingdom, and idea was once placed upon his anvil.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="black-substance" aria-labelledby="substance-heading">
+            <p class="forge-section-number" aria-hidden="true">III</p>
+            <h2 id="substance-heading">The Black Substance</h2>
+            <div class="forge-prose">
+              <p>At the heart of every storm cloud exists a strange material known only as the Black Substance.</p>
+              <p>It has no shape of its own.</p>
+              <p>It is possibility before form.</p>
+              <p>Story before words.</p>
+              <p>Meaning before symbols.</p>
+              <p>Untouched, it remains a featureless darkness.</p>
+              <p>But when struck by the Forger's hammer, it becomes part of reality.</p>
+              <p>Everything forged within the Thought Forge begins as Black Substance.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="servants" aria-labelledby="servants-heading">
+            <p class="forge-section-number" aria-hidden="true">IV</p>
+            <h2 id="servants-heading">The Servants of the Forge</h2>
+            <div class="forge-prose">
+              <p>The Forger never gathers material himself.</p>
+              <p>Instead, countless servants travel the Realm in search of worthy fragments.</p>
+              <p>They collect:</p>
+              <ul class="forge-fragment-list">
+                <li>stories</li>
+                <li>questions</li>
+                <li>discoveries</li>
+                <li>myths</li>
+                <li>dreams</li>
+                <li>memories</li>
+                <li>paradoxes</li>
+                <li>fragments of wisdom</li>
+              </ul>
+              <p>These treasures are carried back into the storm clouds and presented before the anvil.</p>
+              <p>Not all survive.</p>
+              <p>Most are melted down and returned to possibility.</p>
+              <p>Only a few possess enough weight to meet and endure the hammer.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="great-selection" aria-labelledby="selection-heading">
+            <p class="forge-section-number" aria-hidden="true">V</p>
+            <h2 id="selection-heading">The Great Selection</h2>
+            <div class="forge-prose">
+              <p>The greatest mystery of the Thought Forge is not how things are made.</p>
+              <p>It is how they are chosen.</p>
+              <p>No one knows why some stories survive while others vanish.</p>
+              <p>No one knows why one question becomes immortal while another is forgotten.</p>
+              <p>The Forger offers no explanation.</p>
+              <p>When the hammer falls, the decision has already been made.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="thunder-lightning" aria-labelledby="thunder-heading">
+            <p class="forge-section-number" aria-hidden="true">VI</p>
+            <h2 id="thunder-heading">Thunder and Lightning</h2>
+            <div class="forge-prose">
+              <p>The people of the Realm watch storms closely.</p>
+              <p>Every thunderclap is believed to be a strike upon the anvil.</p>
+              <p>Every flash of lightning is believed to be a glimpse into the Forge itself.</p>
+              <p>Children are taught that somewhere above the clouds, reality is still being shaped.</p>
+              <p>For this reason storms are not feared as destructive forces.</p>
+              <p>They are revered as bringers of creation.</p>
+            </div>
+          </section>
+
+          <section class="forge-lore-section" id="sayings" aria-labelledby="sayings-heading">
+            <p class="forge-section-number" aria-hidden="true">VII</p>
+            <h2 id="sayings-heading">Common Sayings</h2>
+            <div class="forge-sayings">
+              <blockquote>"The Forge is never silent."</blockquote>
+              <blockquote>"Bring something worthy of the hammer."</blockquote>
+              <blockquote>"Every storm carries a new shape."</blockquote>
+              <blockquote>"What survives the Forge becomes part of the world."</blockquote>
+            </div>
+          </section>
+
+          <section class="forge-lore-section forge-note" id="cartographer-note" aria-labelledby="note-heading">
+            <p class="forge-section-number" aria-hidden="true">VIII</p>
+            <h2 id="note-heading">Cartographer's Note</h2>
+            <blockquote>
+              <p>Some travelers seek treasure.</p>
+              <p>Others seek answers.</p>
+              <p>The wisest seek questions worth carrying.</p>
+              <p>For no one knows what the Forger may choose to keep.</p>
+              <footer>— The Cartographer</footer>
+            </blockquote>
+          </section>
+
+          <footer class="forge-article__footer">
+            <span aria-hidden="true">✦</span>
+            <a href="../index.html#realm-map">Return to the map</a>
+            <span aria-hidden="true">✦</span>
+          </footer>
+        </article>
       </div>
-
-      <section class="realm-panel realm-function" aria-labelledby="function-heading">
-        <p class="realm-panel__kicker">Why this territory exists</p>
-        <h2 id="function-heading">The function of the realm</h2>
-        <div class="realm-function__grid">
-          <div><h3>Psychological terrain</h3><p id="psychological-theme"></p></div>
-          <div><h3>Philosophical terrain</h3><p id="philosophical-theme"></p></div>
-          <div><h3>Atmosphere</h3><p id="visual-atmosphere"></p></div>
-          <div><h3>Landscape</h3><p id="visual-landscape"></p></div>
-        </div>
-        <div class="motif-groups">
-          <div><h3>Symbols</h3><ul class="symbol-list" id="visual-symbols"></ul></div>
-          <div><h3>Palette</h3><ul class="symbol-list palette-list" id="visual-colors"></ul></div>
-          <div><h3>Sensory details</h3><ul class="symbol-list" id="sensory-details"></ul></div>
-        </div>
-      </section>
-
-      <section class="realm-threshold" aria-labelledby="threshold-heading">
-        <p class="realm-panel__kicker">At the gate</p>
-        <h2 id="threshold-heading" class="realm-threshold__question"><span id="entry-question"></span></h2>
-        <p id="user-invitation"></p>
-        <ul id="sample-questions" class="entry-question-list" aria-label="Questions to bring into this realm"></ul>
-      </section>
-
-      <div class="realm-story-grid realm-story-grid--small">
-        <section class="realm-panel quest-preview" aria-labelledby="quest-title">
-          <p class="realm-panel__kicker">Quest hook · Placeholder</p>
-          <h2 id="quest-title"></h2>
-          <p id="quest-description"></p>
-          <blockquote id="quest-prompt"></blockquote>
-        </section>
-        <section class="realm-panel reward-preview" aria-labelledby="reward-title">
-          <p class="realm-panel__kicker">Possible reward · Placeholder</p>
-          <h2 id="reward-title"></h2>
-          <p id="reward-description"></p>
-        </section>
-      </div>
-
-      <section class="cartographer-chat" aria-labelledby="cartographer-chat-heading">
-        <span class="cartographer-chat__lantern" aria-hidden="true">✦</span>
-        <div>
-          <p class="realm-panel__kicker">Future guided conversation</p>
-          <h2 id="cartographer-chat-heading">Speak with the Cartographer</h2>
-          <p id="cartographer-placeholder">A guided conversation is coming soon.</p>
-        </div>
-        <button type="button" disabled aria-describedby="cartographer-placeholder">Coming soon</button>
-      </section>
-
-      <a class="realm-entry__return" href="../index.html#realm-map">Explore another realm</a>
     </main>
-    <script type="module" src="realm-page.js"></script>
   </body>
 </html>

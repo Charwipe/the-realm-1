@@ -1,4 +1,8 @@
 .thought-forge-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   --forge-orange: #e78d3e;
   --forge-gold: #edc173;
   --forge-ash: #a49aa9;
@@ -140,6 +144,8 @@
 
 .forge-hero {
   display: flex;
+  width: 100%;
+  max-width: 100%;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -290,7 +296,7 @@
 .forge-toc a span { color: #5e5661; font-family: var(--serif); font-size: 0.5rem; }
 .forge-toc a:hover, .forge-toc a:focus-visible { color: var(--forge-gold); outline: none; transform: translateX(3px); }
 
-.forge-article { min-width: 0; }
+.forge-article { width: 100%; min-width: 0; max-width: 100%; }
 .forge-article__header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--forge-line); color: var(--forge-gold); }
 
 .forge-lore-section {
@@ -431,14 +437,17 @@
 }
 
 @media (max-width: 520px) {
-  .forge-header { position: absolute; }
+  .forge-header { position: absolute; width: 100%; }
+  .forge-header .back-link { max-width: 62%; }
+  .forge-sky { width: 100%; max-width: 100%; overflow: hidden; }
   .forge-hero { min-height: 720px; padding-top: 7rem; }
-  .forge-hero h1 { letter-spacing: 0.035em; }
+  .forge-hero h1 { max-width: 100%; font-size: clamp(2.65rem, 15vw, 4.8rem); letter-spacing: 0.025em; overflow-wrap: anywhere; }
   .forge-hero__subtitle { font-size: 0.8rem; }
   .forge-hero__anvil { bottom: 15%; transform: translateX(-50%) scale(0.78); }
-  .forge-layout { width: min(100% - 1.5rem, 720px); padding-bottom: 6rem; }
+  .forge-layout { width: calc(100% - 1.5rem); max-width: calc(100% - 1.5rem); padding-bottom: 6rem; }
   .forge-toc ol { grid-template-columns: 1fr; }
-  .forge-lore-section { padding: 3.8rem 0; }
+  .forge-lore-section { width: 100%; max-width: 100%; padding: 3.8rem 0; }
+  .forge-lore-section h2, .forge-prose, .forge-sayings blockquote, .forge-note blockquote { overflow-wrap: anywhere; }
   .forge-fragment-list { grid-template-columns: 1fr; }
 }
 

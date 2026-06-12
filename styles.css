@@ -12,11 +12,19 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-width: 320px;
+html {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(circle at 50% 15%, rgba(70, 35, 105, 0.24), transparent 34rem),
@@ -35,6 +43,8 @@ body::before {
 }
 a { color: inherit; }
 button { font: inherit; }
+img, svg { max-width: 100%; }
+main, section, article, aside, header, footer, div { min-width: 0; }
 
 .aurora {
   position: absolute;
@@ -120,6 +130,7 @@ button { font: inherit; }
 
 .cartographer-panel {
   display: grid;
+  width: 100%;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(216, 182, 110, 0.24);
@@ -161,6 +172,7 @@ button { font: inherit; }
 
 .cartographer-copy {
   position: relative;
+  min-width: 0;
   z-index: 2;
   padding: clamp(2.25rem, 5vw, 4.5rem);
 }
@@ -215,6 +227,7 @@ button { font: inherit; }
 
 .cartographer-visual {
   display: grid;
+  min-width: 0;
   position: relative;
   min-height: 480px;
   overflow: hidden;
@@ -480,7 +493,7 @@ button { font: inherit; }
 .map-frame::before { top: -5px; left: -5px; border-top: 1px solid; border-left: 1px solid; }
 .map-frame::after { right: -5px; bottom: -5px; border-right: 1px solid; border-bottom: 1px solid; }
 .map-frame__ornament { position: absolute; top: -9px; left: 50%; z-index: 5; width: 30px; color: var(--gold); background: var(--night); font-size: 0.7rem; text-align: center; transform: translateX(-50%); }
-.map-stage { position: relative; overflow: hidden; background: #0a0813; }
+.map-stage { position: relative; width: 100%; max-width: 100%; overflow: hidden; background: #0a0813; }
 .realm-map { display: block; width: 100%; height: auto; transition: filter 500ms ease, transform 850ms cubic-bezier(.2,.7,.2,1); }
 .map-stage:hover .realm-map { transform: scale(1.004); }
 .map-stage.has-active-realm .realm-map { filter: brightness(0.91) saturate(0.95); }
@@ -561,10 +574,15 @@ button { font: inherit; }
 }
 
 @media (max-width: 520px) {
-  .site-header { padding: 1.25rem; }
+  .site-header { gap: 0.75rem; width: 100%; padding: 1.25rem; }
+  .site-header > * { min-width: 0; }
+  .brand { flex: 0 0 auto; }
+  .back-link { justify-content: flex-end; max-width: 62%; line-height: 1.45; text-align: right; white-space: normal; }
+  .realm-count { flex: 0 0 auto; }
   .cartographer-section { padding-right: 0.8rem; padding-left: 0.8rem; }
   .cartographer-panel { border-radius: 18px; }
-  .cartographer-copy { padding: 2rem 1.4rem 2.25rem; }
+  .cartographer-copy { width: 100%; padding: 2rem 1.4rem 2.25rem; }
+  .cartographer-copy h2, .section-heading h2, .mythology-section h2 { overflow-wrap: anywhere; }
   .cartographer-copy__body { font-size: 0.78rem; line-height: 1.8; }
   .cartographer-insight { padding: 0.9rem; font-size: 0.68rem; }
   .cartographer-visual { min-height: 340px; }
@@ -573,15 +591,17 @@ button { font: inherit; }
   .realm-count { font-size: 0; }
   .realm-count span { font-size: 0.75rem; }
   .hero { min-height: 510px; padding-right: 1rem; padding-left: 1rem; }
-  .hero h1 { letter-spacing: 0.1em; text-indent: 0.1em; }
+  .hero h1 { max-width: 100%; font-size: clamp(3.2rem, 18vw, 6rem); letter-spacing: 0.08em; overflow-wrap: anywhere; text-indent: 0.08em; }
   .introduction { font-size: 0.78rem; }
   .map-frame { padding: 3px; }
   .map-tooltip { display: none; }
   .hotspot-marker__ring { r: 34px; }
   .hotspot-marker__pulse { r: 46px; }
   .realm-grid { grid-template-columns: 1fr; }
-  .realm-card { min-height: 215px; }
-  .site-footer { gap: 0.8rem; }
+  .realm-card { width: 100%; min-height: 215px; }
+  .realm-card__name, .realm-card__deity, .realm-card__description, .realm-card__prompt { overflow-wrap: anywhere; }
+  .site-footer { gap: 0.8rem; width: 100%; }
+  .site-footer p { min-width: 0; overflow-wrap: anywhere; }
 }
 
 @media (prefers-reduced-motion: reduce) {

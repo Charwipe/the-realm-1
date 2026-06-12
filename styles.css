@@ -16,15 +16,15 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  overflow-x: clip;
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   margin: 0;
   overflow-x: hidden;
-  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(circle at 50% 15%, rgba(70, 35, 105, 0.24), transparent 34rem),
@@ -47,7 +47,7 @@ img, svg { max-width: 100%; }
 main, section, article, aside, header, footer, div { min-width: 0; }
 
 .aurora {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   border-radius: 50%;
   filter: blur(110px);
@@ -58,6 +58,9 @@ main, section, article, aside, header, footer, div { min-width: 0; }
 .aurora--two { top: 38rem; right: -12rem; width: 30rem; height: 30rem; background: #2b6c87; }
 .star-field {
   position: absolute;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   inset: 0 0 auto;
   z-index: -1;
   height: 64rem;
@@ -68,6 +71,24 @@ main, section, article, aside, header, footer, div { min-width: 0; }
   background-position: 0 0, 37px 21px;
   background-size: 79px 79px, 113px 113px;
   mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+
+body > header,
+body > main,
+body > footer,
+#top,
+.hero,
+.cartographer-section,
+.mythology-section,
+.map-section,
+.realms-section {
+  width: 100%;
+  max-width: 100%;
+}
+
+#top {
+  position: relative;
+  overflow: hidden;
 }
 
 .site-header {
@@ -574,13 +595,20 @@ main, section, article, aside, header, footer, div { min-width: 0; }
 }
 
 @media (max-width: 520px) {
+  html, body, #top { width: 100vw; max-width: 100vw; }
+  body > header, body > main, body > footer { max-width: 100vw; overflow-x: hidden; }
+  .aurora--one { left: -35vw; width: 90vw; height: 90vw; }
+  .aurora--two { right: -38vw; width: 96vw; height: 96vw; }
+  .hero, .cartographer-section, .mythology-section, .map-section, .realms-section { max-width: 100vw; }
   .site-header { gap: 0.75rem; width: 100%; padding: 1.25rem; }
   .site-header > * { min-width: 0; }
   .brand { flex: 0 0 auto; }
   .back-link { justify-content: flex-end; max-width: 62%; line-height: 1.45; text-align: right; white-space: normal; }
   .realm-count { flex: 0 0 auto; }
   .cartographer-section { padding-right: 0.8rem; padding-left: 0.8rem; }
-  .cartographer-panel { border-radius: 18px; }
+  .cartographer-panel { width: 100%; max-width: 100%; border-radius: 18px; }
+  .cartographer-copy, .cartographer-copy__body, .cartographer-insight { max-width: 100%; }
+  .cartographer-visual { width: 100%; max-width: 100%; overflow: hidden; }
   .cartographer-copy { width: 100%; padding: 2rem 1.4rem 2.25rem; }
   .cartographer-copy h2, .section-heading h2, .mythology-section h2 { overflow-wrap: anywhere; }
   .cartographer-copy__body { font-size: 0.78rem; line-height: 1.8; }
@@ -590,7 +618,11 @@ main, section, article, aside, header, footer, div { min-width: 0; }
   .cartographer-visual__caption { bottom: 1.5rem; }
   .realm-count { font-size: 0; }
   .realm-count span { font-size: 0.75rem; }
-  .hero { min-height: 510px; padding-right: 1rem; padding-left: 1rem; }
+  .hero { min-height: 510px; padding-right: 1rem; padding-left: 1rem; overflow: hidden; }
+  .eyebrow { max-width: 100%; gap: 0.65rem; font-size: 0.52rem; letter-spacing: 0.24em; text-align: center; }
+  .eyebrow span { width: clamp(0.75rem, 5vw, 1.4rem); flex: 0 1 auto; }
+  .subtitle { max-width: 100%; font-size: 0.64rem; letter-spacing: 0.13em; line-height: 1.7; overflow-wrap: anywhere; }
+  .introduction { width: 100%; max-width: 32rem; }
   .hero h1 { max-width: 100%; font-size: clamp(3.2rem, 18vw, 6rem); letter-spacing: 0.08em; overflow-wrap: anywhere; text-indent: 0.08em; }
   .introduction { font-size: 0.78rem; }
   .map-frame { padding: 3px; }

@@ -15,6 +15,20 @@ const tooltipDetail = /** @type {HTMLElement} */ (tooltip.querySelector("small")
 const svgNamespace = "http://www.w3.org/2000/svg";
 
 /** @param {import("./data/realm.js").RealmDomain} realm */
+function getDeityLabel(realm) {
+  return realm.deity.title
+    ? `Ruled by ${realm.deity.name}, ${realm.deity.title}`
+    : realm.deity.name;
+}
+
+/** @param {import("./data/realm.js").RealmDomain} realm */
+function getTooltipDetail(realm) {
+  return realm.deity.title
+    ? `${realm.deity.name} · ${realm.deity.title}`
+    : realm.deity.name;
+}
+
+/** @param {import("./data/realm.js").RealmDomain} realm */
 function createHotspot(realm) {
   const link = document.createElementNS(svgNamespace, "a");
   link.setAttribute("href", realm.path);
@@ -59,7 +73,7 @@ function createCard(realm) {
     <span class="realm-card__glyph" aria-hidden="true">${realm.glyph}</span>
     <span class="realm-card__body">
       <span class="realm-card__name">${realm.name}</span>
-      <span class="realm-card__deity">Ruled by ${realm.deity.name}, ${realm.deity.title}</span>
+      <span class="realm-card__deity">${getDeityLabel(realm)}</span>
       <span class="realm-card__description">${realm.shortDescription}</span>
       <span class="realm-card__prompt">${realm.interaction.entryQuestion}</span>
     </span>
@@ -80,7 +94,7 @@ function showRealm(realm, hotspot) {
   mapStage.classList.add("has-active-realm");
   tooltipGlyph.textContent = realm.glyph;
   tooltipName.textContent = realm.name;
-  tooltipDetail.textContent = `${realm.deity.name} · ${realm.deity.title}`;
+  tooltipDetail.textContent = getTooltipDetail(realm);
   tooltip.style.setProperty("--realm-color", realm.color);
 
   const xPercent = (realm.label[0] / 2048) * 100;

@@ -3,20 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore one of the six territories of REALM." />
-    <title>Realm — REALM</title>
+    <meta
+      name="description"
+      content="Where the boundary between self and world begins to dissolve."
+    />
+    <title>The Ocean of Being — REALM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="realm-page.css" />
+    <link rel="stylesheet" href="ocean-of-being.css" />
   </head>
-  <body class="realm-page" data-domain-id="ocean-of-being">
-    <div class="aurora aurora--one" aria-hidden="true"></div>
-    <div class="aurora aurora--two" aria-hidden="true"></div>
-    <div class="star-field" aria-hidden="true"></div>
+  <body class="realm-page ocean-page">
+    <div class="ocean-depths" aria-hidden="true">
+      <div class="ocean-moon"></div>
+      <div class="ocean-light ocean-light--one"></div>
+      <div class="ocean-light ocean-light--two"></div>
+      <div class="ocean-mist ocean-mist--one"></div>
+      <div class="ocean-mist ocean-mist--two"></div>
+      <div class="ocean-particles"></div>
+      <div class="ocean-current ocean-current--one"></div>
+      <div class="ocean-current ocean-current--two"></div>
+    </div>
 
-    <header class="site-header realm-page__header">
+    <header class="site-header realm-page__header ocean-header">
       <a class="brand" href="../index.html" aria-label="REALM home">
         <span class="brand__mark" aria-hidden="true">✦</span>
         <span>REALM</span>
@@ -24,93 +38,178 @@
       <a class="back-link" href="../index.html#realm-map"><span aria-hidden="true">←</span> Return to the map</a>
     </header>
 
-    <main class="realm-page__main" id="realm-content">
-      <section class="realm-entry" aria-labelledby="realm-title">
-        <p class="realm-entry__number" id="realm-number"></p>
-        <div class="realm-entry__sigil" id="realm-glyph" aria-hidden="true"></div>
-        <p class="realm-entry__subtitle" id="realm-subtitle"></p>
-        <h1 id="realm-title">An uncharted realm</h1>
-        <p class="realm-entry__description" id="realm-description"></p>
-        <p class="realm-entry__supreme" id="supreme-reference"></p>
+    <main>
+      <section class="ocean-hero" aria-labelledby="ocean-title">
+        <div class="ocean-hero__pearl" aria-hidden="true">
+          <span class="ocean-hero__ring ocean-hero__ring--one"></span>
+          <span class="ocean-hero__ring ocean-hero__ring--two"></span>
+          <span class="ocean-hero__wave ocean-hero__wave--one"></span>
+          <span class="ocean-hero__wave ocean-hero__wave--two"></span>
+        </div>
+        <h1 id="ocean-title">The Ocean of Being</h1>
+        <p class="ocean-hero__subtitle">Where the boundary between self and world begins to dissolve.</p>
+        <a class="ocean-scroll" href="#nature-of-thalassa">
+          <span>Enter the archive</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </section>
 
-      <div class="realm-story-grid">
-        <section class="realm-panel deity-panel" aria-labelledby="deity-heading">
-          <p class="realm-panel__kicker">The leading deity · <span id="deity-archetype"></span></p>
-          <h2 id="deity-heading"><span id="deity-name"></span> <small id="deity-title"></small></h2>
-          <dl class="realm-facets">
-            <div><dt>Desire</dt><dd id="deity-desire"></dd></div>
-            <div><dt>Wound</dt><dd id="deity-wound"></dd></div>
-            <div><dt>Gift</dt><dd id="deity-gift"></dd></div>
-            <div><dt>Shadow</dt><dd id="deity-shadow"></dd></div>
-          </dl>
-          <p class="realm-voice"><span>Voice</span><span id="deity-voice"></span></p>
-          <ul class="symbol-list" id="deity-symbols" aria-label="Deity symbols"></ul>
-        </section>
+      <div class="ocean-layout">
+        <aside class="ocean-toc" aria-labelledby="contents-heading">
+          <div class="ocean-toc__inner">
+            <p class="ocean-toc__label">Lore index</p>
+            <h2 id="contents-heading">Contents</h2>
+            <nav aria-label="Ocean of Being contents">
+              <ol>
+                <li><a href="#nature-of-thalassa"><span>01</span>The Nature of Thalassa</a></li>
+                <li><a href="#first-illusion"><span>02</span>The First Illusion</a></li>
+                <li><a href="#song-beneath-waves"><span>03</span>The Song Beneath the Waves</a></li>
+                <li><a href="#pearl-divers"><span>04</span>The Pearl Divers</a></li>
+                <li><a href="#gift-danger"><span>05</span>The Gift and the Danger</a></li>
+                <li><a href="#cartographers-warning"><span>06</span>The Cartographer's Warning</a></li>
+                <li><a href="#contemplation"><span>07</span>Contemplation</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
 
-        <section class="realm-panel narrative-panel" aria-labelledby="narrative-heading">
-          <p class="realm-panel__kicker">The dramatic threshold</p>
-          <h2 id="narrative-heading">The story awaiting you</h2>
-          <p class="narrative-premise" id="narrative-premise"></p>
-          <p id="narrative-conflict"></p>
-          <blockquote id="narrative-question"></blockquote>
-          <dl class="realm-facets realm-facets--compact">
-            <div><dt>Transformation</dt><dd id="narrative-transformation"></dd></div>
-            <div><dt>Danger</dt><dd id="narrative-danger"></dd></div>
-          </dl>
-          <p class="narrative-invitation" id="narrative-invitation"></p>
-        </section>
+        <article class="ocean-article">
+          <header class="ocean-article__header">
+            <p>The Ocean of Being</p>
+            <span aria-hidden="true">≋</span>
+          </header>
+
+          <section class="ocean-lore-section ocean-lore-section--lead" id="nature-of-thalassa" aria-labelledby="nature-heading">
+            <p class="ocean-section-number" aria-hidden="true">I</p>
+            <h2 id="nature-heading">The Nature of Thalassa</h2>
+            <div class="ocean-prose">
+              <p>The Ocean is older than every realm.</p>
+              <p>Before there were kingdoms, gods, names, stories, or maps, there was only the Ocean.</p>
+              <p>The people of the Realm speak of a goddess called Thalassa, but this is already a misunderstanding.</p>
+              <p>The Ocean has no ruler.</p>
+              <p>Thalassa is not a being within the Ocean.</p>
+              <p>Thalassa is the Ocean.</p>
+              <p>Every wave is one of her thoughts.</p>
+              <p>Every fish is one of her dreams.</p>
+              <p>Every sailor is one of her temporary disguises.</p>
+              <p>To meet another creature is, in truth, to meet another face of Thalassa.</p>
+              <p>To meet yourself is the same.</p>
+            </div>
+          </section>
+
+          <section class="ocean-lore-section" id="first-illusion" aria-labelledby="illusion-heading">
+            <p class="ocean-section-number" aria-hidden="true">II</p>
+            <h2 id="illusion-heading">The First Illusion</h2>
+            <div class="ocean-prose">
+              <p>The Ocean teaches that the first illusion is separation.</p>
+              <p>Children are born believing themselves to be islands.</p>
+              <p>They learn names.</p>
+              <p>They learn borders.</p>
+              <p>They learn possessions.</p>
+              <p>They learn stories about who they are.</p>
+              <p>These things are useful near the shore.</p>
+              <p>But the deeper one travels into the Ocean, the less real they appear.</p>
+              <p>The sailor discovers that the water beneath every vessel is connected.</p>
+              <p>The mystic discovers that the consciousness behind every face is connected.</p>
+              <p>The saint discovers that there was never more than one Ocean.</p>
+            </div>
+          </section>
+
+          <section class="ocean-lore-section" id="song-beneath-waves" aria-labelledby="song-heading">
+            <p class="ocean-section-number" aria-hidden="true">III</p>
+            <h2 id="song-heading">The Song Beneath the Waves</h2>
+            <div class="ocean-prose">
+              <p>At the deepest layer of reality lies the Song of Thalassa.</p>
+              <p>The Song is older than language.</p>
+              <p>It cannot be spoken.</p>
+              <p>It cannot be translated.</p>
+              <p>It can only be heard.</p>
+              <p>Everything vibrates with it.</p>
+              <p>The movement of stars.</p>
+              <p>The beating of hearts.</p>
+              <p>The growth of forests.</p>
+              <p>The thoughts of minds.</p>
+              <p>Most beings never notice it.</p>
+              <p>The crashing waves of desire drown it out.</p>
+              <p>The winds of fear drown it out.</p>
+              <p>The endless voices of the self drown it out.</p>
+              <p>But those who become still enough begin to hear a distant melody beneath all things.</p>
+              <p>Once heard, it can never be completely forgotten.</p>
+            </div>
+          </section>
+
+          <section class="ocean-lore-section" id="pearl-divers" aria-labelledby="divers-heading">
+            <p class="ocean-section-number" aria-hidden="true">IV</p>
+            <h2 id="divers-heading">The Pearl Divers</h2>
+            <div class="ocean-prose">
+              <p>The Ocean's sages are known as the Pearl Divers.</p>
+              <p>Unlike scholars, they do not seek knowledge.</p>
+              <p>Unlike warriors, they do not seek victory.</p>
+              <p>Unlike kings, they do not seek power.</p>
+              <p>They dive.</p>
+              <p>Again and again they descend beneath the surface of thought, emotion, memory, identity, and desire.</p>
+              <p>Each layer surrendered allows them to travel deeper.</p>
+              <p>What they seek are not pearls of treasure, but pearls of dissolution: moments in which the boundary between self and world briefly disappears.</p>
+              <p>Many return transformed.</p>
+              <p>Some never return at all.</p>
+            </div>
+          </section>
+
+          <section class="ocean-lore-section ocean-lore-section--threshold" id="gift-danger" aria-labelledby="danger-heading">
+            <p class="ocean-section-number" aria-hidden="true">V</p>
+            <h2 id="danger-heading">The Gift and the Danger</h2>
+            <div class="ocean-prose">
+              <p>Travelers often mistake the Ocean for a paradise.</p>
+              <p>It is not.</p>
+              <p>The Ocean offers peace, but demands sacrifice.</p>
+              <p>The price is identity.</p>
+              <p>A visitor may enter seeking relief from suffering.</p>
+              <p>The Ocean replies:</p>
+              <blockquote>"Then surrender the one who suffers."</blockquote>
+              <p>A visitor may seek eternal love.</p>
+              <p>The Ocean replies:</p>
+              <blockquote>"Then surrender the one who wishes to possess."</blockquote>
+              <p>A visitor may seek enlightenment.</p>
+              <p>The Ocean replies:</p>
+              <blockquote>"Then surrender the one who wishes to become enlightened."</blockquote>
+              <p>The deeper the immersion, the weaker the boundary between self and world becomes.</p>
+              <p>For this reason, the Ocean is revered and feared throughout the Realm.</p>
+              <p>Many worship it.</p>
+              <p>Few dare to enter its depths.</p>
+            </div>
+          </section>
+
+          <section class="ocean-lore-section ocean-warning" id="cartographers-warning" aria-labelledby="warning-heading">
+            <p class="ocean-section-number" aria-hidden="true">VI</p>
+            <h2 id="warning-heading">The Cartographer's Warning</h2>
+            <blockquote>
+              <p>"The Forge teaches you how to build a self.</p>
+              <p>The Ocean teaches you how to let go of one.</p>
+              <p>Neither path is complete without the other.</p>
+              <p>Stay too long in the Forge and you become trapped in your story.</p>
+              <p>Stay too long in the Ocean and there may be nobody left to tell it."</p>
+              <footer>— The Cartographer</footer>
+            </blockquote>
+          </section>
+
+          <section class="ocean-lore-section ocean-contemplation" id="contemplation" aria-labelledby="contemplation-heading">
+            <p class="ocean-section-number" aria-hidden="true">VII</p>
+            <h2 id="contemplation-heading">Contemplation</h2>
+            <div class="ocean-question-list">
+              <p>What part of your identity feels most essential?</p>
+              <p>Who would remain if every label disappeared?</p>
+              <p>Can you find a boundary between yourself and experience right now?</p>
+              <p>What are you holding onto that the Ocean would ask you to release?</p>
+            </div>
+          </section>
+
+          <footer class="ocean-article__footer">
+            <span aria-hidden="true">≋</span>
+            <a href="../index.html#realm-map">Return to the map</a>
+            <span aria-hidden="true">≋</span>
+          </footer>
+        </article>
       </div>
-
-      <section class="realm-panel realm-function" aria-labelledby="function-heading">
-        <p class="realm-panel__kicker">Why this territory exists</p>
-        <h2 id="function-heading">The function of the realm</h2>
-        <div class="realm-function__grid">
-          <div><h3>Psychological terrain</h3><p id="psychological-theme"></p></div>
-          <div><h3>Philosophical terrain</h3><p id="philosophical-theme"></p></div>
-          <div><h3>Atmosphere</h3><p id="visual-atmosphere"></p></div>
-          <div><h3>Landscape</h3><p id="visual-landscape"></p></div>
-        </div>
-        <div class="motif-groups">
-          <div><h3>Symbols</h3><ul class="symbol-list" id="visual-symbols"></ul></div>
-          <div><h3>Palette</h3><ul class="symbol-list palette-list" id="visual-colors"></ul></div>
-          <div><h3>Sensory details</h3><ul class="symbol-list" id="sensory-details"></ul></div>
-        </div>
-      </section>
-
-      <section class="realm-threshold" aria-labelledby="threshold-heading">
-        <p class="realm-panel__kicker">At the gate</p>
-        <h2 id="threshold-heading" class="realm-threshold__question"><span id="entry-question"></span></h2>
-        <p id="user-invitation"></p>
-        <ul id="sample-questions" class="entry-question-list" aria-label="Questions to bring into this realm"></ul>
-      </section>
-
-      <div class="realm-story-grid realm-story-grid--small">
-        <section class="realm-panel quest-preview" aria-labelledby="quest-title">
-          <p class="realm-panel__kicker">Quest hook · Placeholder</p>
-          <h2 id="quest-title"></h2>
-          <p id="quest-description"></p>
-          <blockquote id="quest-prompt"></blockquote>
-        </section>
-        <section class="realm-panel reward-preview" aria-labelledby="reward-title">
-          <p class="realm-panel__kicker">Possible reward · Placeholder</p>
-          <h2 id="reward-title"></h2>
-          <p id="reward-description"></p>
-        </section>
-      </div>
-
-      <section class="cartographer-chat" aria-labelledby="cartographer-chat-heading">
-        <span class="cartographer-chat__lantern" aria-hidden="true">✦</span>
-        <div>
-          <p class="realm-panel__kicker">Future guided conversation</p>
-          <h2 id="cartographer-chat-heading">Speak with the Cartographer</h2>
-          <p id="cartographer-placeholder">A guided conversation is coming soon.</p>
-        </div>
-        <button type="button" disabled aria-describedby="cartographer-placeholder">Coming soon</button>
-      </section>
-
-      <a class="realm-entry__return" href="../index.html#realm-map">Explore another realm</a>
     </main>
-    <script type="module" src="realm-page.js"></script>
   </body>
 </html>

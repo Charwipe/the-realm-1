@@ -1,6 +1,6 @@
 // @ts-check
 
-import { cartographer, realmDomains, supremeEntity } from "./data/realm.js";
+import { realmDomains } from "./data/realm.js";
 
 const realms = realmDomains;
 
@@ -122,30 +122,6 @@ function highlightMap(realmId, isActive) {
   if (isActive) showRealm(realm, hotspot);
   else hideRealm(hotspot);
 }
-
-function renderMythologyFrame() {
-  const cartographerHeading = document.querySelector("#cartographer-heading");
-  const cartographerBody = document.querySelector("#cartographer-copy-body");
-  const mythologyText = document.querySelector("#mythology-text");
-  const supremeName = document.querySelector("#supreme-entity-name");
-
-  if (cartographerHeading) cartographerHeading.textContent = `Meet ${cartographer.name}`;
-  if (cartographerBody) {
-    cartographerBody.replaceChildren(
-      ...cartographer.introduction.map((paragraph) => {
-        const element = document.createElement("p");
-        element.textContent = paragraph;
-        return element;
-      }),
-    );
-  }
-  if (mythologyText) {
-    mythologyText.textContent = `Each realm is ruled by a deity with a gift, a wound, and a question. Even the gods orient themselves toward ${supremeEntity.name}, ${supremeEntity.title.toLowerCase()}. ${cartographer.name} carries a lantern between their territories, helping each traveler find the road their question has opened.`;
-  }
-  if (supremeName) supremeName.textContent = supremeEntity.name;
-}
-
-renderMythologyFrame();
 
 realms.forEach((realm) => {
   createHotspot(realm);

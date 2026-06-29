@@ -1,0 +1,638 @@
+.ocean-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  --ocean-abyss: #050b18;
+  --ocean-midnight: #07172a;
+  --ocean-blue: #0d3555;
+  --ocean-teal: #4fd6da;
+  --ocean-silver: #d6f4ff;
+  --ocean-moon: #f5fbff;
+  --ocean-line: rgba(154, 230, 239, 0.2);
+  --ocean-muted: #a7bfd0;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(63, 194, 220, 0.16), transparent 28rem),
+    linear-gradient(180deg, #061223 0%, #071829 44%, #04101d 100%);
+}
+
+.ocean-page::before {
+  position: fixed;
+}
+
+.ocean-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  max-width: 1440px;
+}
+
+.ocean-depths {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: min(900px, 96vh);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 72%, rgba(58, 205, 216, 0.16), transparent 28%),
+    radial-gradient(ellipse at 50% 12%, rgba(199, 238, 255, 0.14), transparent 34%),
+    linear-gradient(180deg, #061329 0%, #082641 52%, #030b16 100%);
+  pointer-events: none;
+}
+
+.ocean-depths::before,
+.ocean-depths::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.ocean-depths::before {
+  inset: 0;
+  opacity: 0.34;
+  background:
+    radial-gradient(circle, rgba(224, 252, 255, 0.9) 0 1px, transparent 1.6px) 0 0 / 92px 92px,
+    radial-gradient(circle, rgba(111, 221, 230, 0.6) 0 0.8px, transparent 1.4px) 33px 51px / 137px 137px;
+  mask-image: linear-gradient(to bottom, #000, transparent 84%);
+}
+
+.ocean-depths::after {
+  right: 0;
+  bottom: -100px;
+  left: 0;
+  height: 360px;
+  background:
+    linear-gradient(180deg, transparent, rgba(3, 11, 22, 0.92)),
+    radial-gradient(ellipse at 50% 100%, rgba(79, 214, 218, 0.18), transparent 58%);
+  filter: blur(10px);
+}
+
+.ocean-moon {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: clamp(120px, 18vw, 220px);
+  height: clamp(120px, 18vw, 220px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff 0 12%, #d6f4ff 36%, rgba(148, 213, 232, 0.62) 62%, transparent 72%);
+  box-shadow: 0 0 55px rgba(197, 245, 255, 0.28), 0 0 140px rgba(73, 200, 218, 0.22);
+  opacity: 0.32;
+  transform: translateX(-50%);
+}
+
+.ocean-light {
+  position: absolute;
+  top: -8%;
+  width: 24%;
+  height: 90%;
+  opacity: 0.26;
+  background: linear-gradient(180deg, rgba(207, 255, 255, 0.38), rgba(67, 215, 226, 0.08) 52%, transparent);
+  filter: blur(10px);
+  clip-path: polygon(42% 0, 62% 0, 100% 100%, 0 100%);
+  transform-origin: 50% 0;
+}
+
+.ocean-light--one { left: 18%; transform: rotate(8deg); }
+.ocean-light--two { right: 16%; opacity: 0.18; animation-delay: -7s; transform: rotate(-9deg); }
+
+.ocean-mist {
+  position: absolute;
+  right: -8%;
+  left: -8%;
+  height: 28%;
+  opacity: 0.52;
+  border-radius: 50%;
+  background: rgba(74, 159, 185, 0.18);
+  filter: blur(22px);
+}
+
+.ocean-mist--one { top: 32%; }
+.ocean-mist--two { top: 57%; opacity: 0.32; }
+
+.ocean-particles {
+  position: absolute;
+  inset: 18% 8% 0;
+  opacity: 0.45;
+  background-image:
+    radial-gradient(circle, rgba(207, 255, 252, 0.92) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(75, 207, 217, 0.72) 0 0.8px, transparent 1.4px);
+  background-position: 0 0, 29px 37px;
+  background-size: 82px 96px, 111px 127px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, transparent 92%);
+}
+
+.ocean-current {
+  position: absolute;
+  right: -10%;
+  left: -10%;
+  height: 160px;
+  opacity: 0.24;
+  border: 1px solid transparent;
+  border-top-color: rgba(179, 244, 255, 0.34);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.ocean-current--one { top: 46%; }
+.ocean-current--two { top: 66%; opacity: 0.18; }
+
+.ocean-hero {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: min(900px, 96vh);
+  padding: 8rem 1.5rem 6rem;
+  overflow: hidden;
+  text-align: center;
+  flex-direction: column;
+}
+
+.ocean-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 250px;
+  background: linear-gradient(transparent, #04101d);
+  content: "";
+  pointer-events: none;
+}
+
+.ocean-hero h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(180deg, #ffffff 8%, #d6f4ff 42%, #61d7e2 74%, #2d8dab 100%);
+  background-clip: text;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 8.2vw, 7.1rem);
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.05;
+  text-shadow: 0 0 58px rgba(91, 220, 230, 0.17);
+}
+
+.ocean-hero__subtitle {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+  margin: 1.55rem auto 0;
+  color: #c3d7e3;
+  font-family: var(--serif);
+  font-size: clamp(0.9rem, 1.8vw, 1.08rem);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+.ocean-hero__pearl {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  z-index: 1;
+  width: clamp(180px, 26vw, 330px);
+  height: clamp(180px, 26vw, 330px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.92) 0 6%, rgba(213, 247, 255, 0.35) 18%, transparent 34%),
+    radial-gradient(circle, rgba(80, 219, 225, 0.18), transparent 62%);
+  box-shadow: inset 0 0 32px rgba(231, 255, 255, 0.13), 0 0 95px rgba(69, 203, 221, 0.18);
+  opacity: 0.6;
+  transform: translateX(-50%);
+}
+
+.ocean-hero__ring {
+  position: absolute;
+  inset: 18%;
+  border: 1px solid rgba(196, 246, 255, 0.24);
+  border-radius: 50%;
+}
+
+.ocean-hero__ring--two { inset: 30%; opacity: 0.62; }
+
+.ocean-hero__wave {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 38%;
+  border-top: 1px solid rgba(207, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.ocean-hero__wave--one { top: 42%; transform: rotate(8deg); }
+.ocean-hero__wave--two { top: 52%; opacity: 0.62; transform: rotate(-7deg); }
+
+.ocean-scroll {
+  display: inline-flex;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+  color: var(--ocean-silver);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.ocean-layout {
+  display: grid;
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 2rem));
+  margin: -3.5rem auto 0;
+  gap: 2rem;
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+}
+
+.ocean-toc {
+  min-width: 0;
+}
+
+.ocean-toc__inner {
+  position: sticky;
+  top: 2rem;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid var(--ocean-line);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgba(9, 35, 58, 0.78), rgba(4, 14, 29, 0.78));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28), inset 0 0 40px rgba(77, 212, 222, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.ocean-toc__inner::before {
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background: radial-gradient(circle at 20% 0%, rgba(189, 247, 255, 0.14), transparent 40%);
+  content: "";
+  pointer-events: none;
+}
+
+.ocean-toc__label,
+.ocean-article__header p {
+  margin: 0;
+  color: var(--ocean-teal);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.ocean-toc h2 {
+  margin: 0.45rem 0 1rem;
+  color: #edf9ff;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.ocean-toc ol {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  gap: 0.45rem;
+  list-style: none;
+}
+
+.ocean-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.62rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #c4d7e1;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.ocean-toc a span {
+  color: var(--ocean-teal);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.ocean-toc a:hover,
+.ocean-toc a:focus-visible {
+  border-color: rgba(124, 231, 238, 0.27);
+  background: rgba(78, 208, 220, 0.08);
+  color: #ffffff;
+  outline: none;
+}
+
+.ocean-article {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(167, 238, 246, 0.18);
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(8, 31, 52, 0.86), rgba(4, 12, 25, 0.88)),
+    radial-gradient(circle at 86% 6%, rgba(88, 218, 229, 0.14), transparent 23rem);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.38), inset 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.ocean-article__header,
+.ocean-article__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem clamp(1.25rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(168, 237, 245, 0.13);
+}
+
+.ocean-article__header span,
+.ocean-article__footer span {
+  color: var(--ocean-teal);
+  text-shadow: 0 0 20px rgba(86, 216, 228, 0.55);
+}
+
+.ocean-lore-section {
+  position: relative;
+  padding: clamp(2.4rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 4.6rem);
+  border-bottom: 1px solid rgba(168, 237, 245, 0.11);
+}
+
+.ocean-lore-section::before {
+  position: absolute;
+  top: 0;
+  right: clamp(1.25rem, 5vw, 4.6rem);
+  left: clamp(1.25rem, 5vw, 4.6rem);
+  height: 1px;
+  opacity: 0.74;
+  background: linear-gradient(90deg, transparent, rgba(103, 220, 231, 0.46), transparent);
+  content: "";
+}
+
+.ocean-lore-section--lead::before { display: none; }
+
+.ocean-lore-section--threshold {
+  background:
+    radial-gradient(circle at 86% 20%, rgba(62, 209, 221, 0.12), transparent 21rem),
+    linear-gradient(180deg, rgba(5, 24, 42, 0.36), transparent);
+}
+
+.ocean-section-number {
+  margin: 0 0 0.75rem;
+  color: rgba(116, 228, 236, 0.72);
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  letter-spacing: 0.28em;
+}
+
+.ocean-lore-section h2 {
+  max-width: 760px;
+  margin: 0 0 1.5rem;
+  color: #f2fbff;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4.6vw, 3.45rem);
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 1.12;
+}
+
+.ocean-prose,
+.ocean-question-list,
+.ocean-warning blockquote {
+  max-width: 760px;
+}
+
+.ocean-prose p,
+.ocean-question-list p,
+.ocean-warning p {
+  margin: 0 0 1rem;
+  color: #c7d8e3;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.9;
+}
+
+.ocean-prose p:last-child,
+.ocean-question-list p:last-child,
+.ocean-warning p:last-of-type {
+  margin-bottom: 0;
+}
+
+.ocean-prose blockquote {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.05rem 0 1.35rem;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid rgba(138, 231, 239, 0.24);
+  border-left: 3px solid rgba(117, 234, 239, 0.7);
+  border-radius: 18px;
+  color: #ecfdff;
+  background: rgba(74, 204, 218, 0.08);
+  box-shadow: inset 0 0 24px rgba(87, 219, 226, 0.04);
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.ocean-warning {
+  background:
+    radial-gradient(circle at 10% 12%, rgba(214, 244, 255, 0.1), transparent 18rem),
+    linear-gradient(135deg, rgba(3, 17, 30, 0.38), rgba(11, 43, 62, 0.26));
+}
+
+.ocean-warning blockquote {
+  position: relative;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(188, 244, 250, 0.25);
+  border-radius: 26px;
+  background:
+    linear-gradient(150deg, rgba(9, 37, 61, 0.74), rgba(2, 13, 25, 0.78)),
+    radial-gradient(circle at 92% 0%, rgba(111, 228, 236, 0.15), transparent 14rem);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.ocean-warning blockquote::before {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.4rem;
+  color: rgba(146, 235, 244, 0.2);
+  content: "≋";
+  font-family: var(--serif);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.ocean-warning footer {
+  margin-top: 1.25rem;
+  color: var(--ocean-teal);
+  font-family: var(--serif);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+}
+
+.ocean-contemplation {
+  background: radial-gradient(circle at 90% 45%, rgba(196, 246, 255, 0.1), transparent 18rem);
+}
+
+.ocean-question-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ocean-question-list p {
+  position: relative;
+  margin: 0;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid rgba(140, 229, 238, 0.18);
+  border-radius: 20px;
+  background: rgba(55, 167, 190, 0.07);
+}
+
+.ocean-question-list p::before {
+  position: absolute;
+  top: 1.05rem;
+  left: 1.2rem;
+  color: var(--ocean-teal);
+  content: "◌";
+  text-shadow: 0 0 15px rgba(88, 223, 230, 0.58);
+}
+
+.ocean-article__footer {
+  justify-content: center;
+  border-top: 1px solid rgba(168, 237, 245, 0.13);
+  border-bottom: 0;
+}
+
+.ocean-article__footer a {
+  color: #e6f9ff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.ocean-article__footer a:hover,
+.ocean-article__footer a:focus-visible {
+  color: var(--ocean-teal);
+  outline: none;
+}
+
+@keyframes ocean-particles-drift {
+  from { background-position: 0 0, 33px 51px; }
+  to { background-position: 92px 138px, 170px 188px; }
+}
+
+@keyframes ocean-light-sway {
+  from { transform: rotate(7deg) translateX(-1.5rem); }
+  to { transform: rotate(-4deg) translateX(1.5rem); }
+}
+
+@keyframes ocean-mist-drift {
+  from { transform: translateX(-3%); }
+  to { transform: translateX(3%); }
+}
+
+@keyframes ocean-particles-rise {
+  from { background-position: 0 0, 29px 37px; }
+  to { background-position: 0 -180px, 29px -143px; }
+}
+
+@keyframes ocean-current-flow {
+  from { transform: translateX(-4%) scaleX(1); }
+  to { transform: translateX(4%) scaleX(1.08); }
+}
+
+@keyframes ocean-pearl-breathe {
+  from { opacity: 0.48; transform: translateX(-50%) scale(0.98); }
+  to { opacity: 0.68; transform: translateX(-50%) scale(1.03); }
+}
+
+@media (max-width: 900px) {
+  .ocean-layout {
+    width: min(100%, calc(100% - 1rem));
+    margin-top: -2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .ocean-toc__inner {
+    position: relative;
+    top: auto;
+  }
+
+  .ocean-toc ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .ocean-header {
+    padding-inline: 1rem;
+  }
+
+  .ocean-hero {
+    min-height: 82vh;
+    padding: 7rem 1rem 5rem;
+  }
+
+  .ocean-hero h1 {
+    font-size: clamp(2.45rem, 16vw, 4rem);
+    letter-spacing: 0.045em;
+  }
+
+  .ocean-hero__subtitle {
+    font-size: 0.92rem;
+    letter-spacing: 0.045em;
+  }
+
+  .ocean-toc ol {
+    grid-template-columns: 1fr;
+  }
+
+  .ocean-article {
+    border-radius: 24px;
+  }
+
+  .ocean-article__header,
+  .ocean-article__footer,
+  .ocean-lore-section {
+    padding-inline: 1rem;
+  }
+
+  .ocean-lore-section h2 {
+    font-size: clamp(1.85rem, 11vw, 2.55rem);
+  }
+
+  .ocean-prose p,
+  .ocean-question-list p,
+  .ocean-warning p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .ocean-question-list p {
+    padding-left: 2.5rem;
+  }
+
+  .ocean-warning blockquote {
+    padding: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-depths::before,
+  .ocean-light,
+  .ocean-mist,
+  .ocean-particles,
+  .ocean-current,
+  .ocean-hero__pearl {
+    animation: none;
+  }
+}

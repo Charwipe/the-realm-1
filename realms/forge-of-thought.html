@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="The Thought Forge is one of the six great regions of the Realm."
-    />
-    <title>The Thought Forge — REALM</title>
+    <meta name="description" content="The Thought Forge is coming soon." />
+    <title>The Thought Forge — Coming Soon — REALM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,19 +13,14 @@
     />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="realm-page.css" />
-    <link rel="stylesheet" href="thought-forge.css" />
+    <link rel="stylesheet" href="coming-soon.css" />
   </head>
-  <body class="realm-page thought-forge-page">
-    <div class="forge-sky" aria-hidden="true">
-      <div class="forge-cloud forge-cloud--one"></div>
-      <div class="forge-cloud forge-cloud--two"></div>
-      <div class="forge-cloud forge-cloud--three"></div>
-      <div class="forge-lightning forge-lightning--one"></div>
-      <div class="forge-lightning forge-lightning--two"></div>
-      <div class="forge-embers"></div>
-    </div>
+  <body class="realm-page coming-soon-page" style="--realm-color: #ed9d56">
+    <div class="aurora aurora--one" aria-hidden="true"></div>
+    <div class="aurora aurora--two" aria-hidden="true"></div>
+    <div class="star-field" aria-hidden="true"></div>
 
-    <header class="site-header realm-page__header forge-header">
+    <header class="site-header realm-page__header">
       <a class="brand" href="../index.html" aria-label="REALM home">
         <span class="brand__mark" aria-hidden="true">✦</span>
         <span>REALM</span>
@@ -36,6 +28,21 @@
       <a class="back-link" href="../index.html#realm-map"><span aria-hidden="true">←</span> Return to the map</a>
     </header>
 
+    <main class="coming-soon" aria-labelledby="realm-title">
+      <section class="coming-soon__panel">
+        <div class="coming-soon__glyph" aria-hidden="true">✺</div>
+        <p class="coming-soon__kicker">Realm archive</p>
+        <h1 id="realm-title">The Thought Forge</h1>
+        <p class="coming-soon__message">Coming soon.</p>
+        <div class="coming-soon__divider" aria-hidden="true">✦</div>
+        <div class="coming-soon__actions">
+          <a class="coming-soon__link" href="../index.html#realm-map">Return to the map</a>
+          <a class="coming-soon__link" href="../index.html">REALM home</a>
+        </div>
+      </section>
+    </main>
+
+    <template id="thought-forge-archive-draft" data-preserved="future-reveal">
     <main>
       <section class="forge-hero" aria-labelledby="forge-title">
         <div class="forge-hero__anvil" aria-hidden="true">
@@ -199,5 +206,6 @@
         </article>
       </div>
     </main>
+    </template>
   </body>
 </html>

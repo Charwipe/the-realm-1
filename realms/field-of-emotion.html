@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore one of the six territories of REALM." />
-    <title>Realm — REALM</title>
+    <meta name="description" content="The Field of Emotion is coming soon." />
+    <title>The Field of Emotion — Coming Soon — REALM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="realm-page.css" />
+    <link rel="stylesheet" href="coming-soon.css" />
   </head>
-  <body class="realm-page" data-domain-id="field-of-emotion">
+  <body class="realm-page coming-soon-page" style="--realm-color: #e995ba">
     <div class="aurora aurora--one" aria-hidden="true"></div>
     <div class="aurora aurora--two" aria-hidden="true"></div>
     <div class="star-field" aria-hidden="true"></div>
@@ -24,93 +25,18 @@
       <a class="back-link" href="../index.html#realm-map"><span aria-hidden="true">←</span> Return to the map</a>
     </header>
 
-    <main class="realm-page__main" id="realm-content">
-      <section class="realm-entry" aria-labelledby="realm-title">
-        <p class="realm-entry__number" id="realm-number"></p>
-        <div class="realm-entry__sigil" id="realm-glyph" aria-hidden="true"></div>
-        <p class="realm-entry__subtitle" id="realm-subtitle"></p>
-        <h1 id="realm-title">An uncharted realm</h1>
-        <p class="realm-entry__description" id="realm-description"></p>
-        <p class="realm-entry__supreme" id="supreme-reference"></p>
-      </section>
-
-      <div class="realm-story-grid">
-        <section class="realm-panel deity-panel" aria-labelledby="deity-heading">
-          <p class="realm-panel__kicker">The leading deity · <span id="deity-archetype"></span></p>
-          <h2 id="deity-heading"><span id="deity-name"></span> <small id="deity-title"></small></h2>
-          <dl class="realm-facets">
-            <div><dt>Desire</dt><dd id="deity-desire"></dd></div>
-            <div><dt>Wound</dt><dd id="deity-wound"></dd></div>
-            <div><dt>Gift</dt><dd id="deity-gift"></dd></div>
-            <div><dt>Shadow</dt><dd id="deity-shadow"></dd></div>
-          </dl>
-          <p class="realm-voice"><span>Voice</span><span id="deity-voice"></span></p>
-          <ul class="symbol-list" id="deity-symbols" aria-label="Deity symbols"></ul>
-        </section>
-
-        <section class="realm-panel narrative-panel" aria-labelledby="narrative-heading">
-          <p class="realm-panel__kicker">The dramatic threshold</p>
-          <h2 id="narrative-heading">The story awaiting you</h2>
-          <p class="narrative-premise" id="narrative-premise"></p>
-          <p id="narrative-conflict"></p>
-          <blockquote id="narrative-question"></blockquote>
-          <dl class="realm-facets realm-facets--compact">
-            <div><dt>Transformation</dt><dd id="narrative-transformation"></dd></div>
-            <div><dt>Danger</dt><dd id="narrative-danger"></dd></div>
-          </dl>
-          <p class="narrative-invitation" id="narrative-invitation"></p>
-        </section>
-      </div>
-
-      <section class="realm-panel realm-function" aria-labelledby="function-heading">
-        <p class="realm-panel__kicker">Why this territory exists</p>
-        <h2 id="function-heading">The function of the realm</h2>
-        <div class="realm-function__grid">
-          <div><h3>Psychological terrain</h3><p id="psychological-theme"></p></div>
-          <div><h3>Philosophical terrain</h3><p id="philosophical-theme"></p></div>
-          <div><h3>Atmosphere</h3><p id="visual-atmosphere"></p></div>
-          <div><h3>Landscape</h3><p id="visual-landscape"></p></div>
-        </div>
-        <div class="motif-groups">
-          <div><h3>Symbols</h3><ul class="symbol-list" id="visual-symbols"></ul></div>
-          <div><h3>Palette</h3><ul class="symbol-list palette-list" id="visual-colors"></ul></div>
-          <div><h3>Sensory details</h3><ul class="symbol-list" id="sensory-details"></ul></div>
+    <main class="coming-soon" aria-labelledby="realm-title">
+      <section class="coming-soon__panel">
+        <div class="coming-soon__glyph" aria-hidden="true">♡</div>
+        <p class="coming-soon__kicker">Realm archive</p>
+        <h1 id="realm-title">The Field of Emotion</h1>
+        <p class="coming-soon__message">Coming soon.</p>
+        <div class="coming-soon__divider" aria-hidden="true">✦</div>
+        <div class="coming-soon__actions">
+          <a class="coming-soon__link" href="../index.html#realm-map">Return to the map</a>
+          <a class="coming-soon__link" href="../index.html">REALM home</a>
         </div>
       </section>
-
-      <section class="realm-threshold" aria-labelledby="threshold-heading">
-        <p class="realm-panel__kicker">At the gate</p>
-        <h2 id="threshold-heading" class="realm-threshold__question"><span id="entry-question"></span></h2>
-        <p id="user-invitation"></p>
-        <ul id="sample-questions" class="entry-question-list" aria-label="Questions to bring into this realm"></ul>
-      </section>
-
-      <div class="realm-story-grid realm-story-grid--small">
-        <section class="realm-panel quest-preview" aria-labelledby="quest-title">
-          <p class="realm-panel__kicker">Quest hook · Placeholder</p>
-          <h2 id="quest-title"></h2>
-          <p id="quest-description"></p>
-          <blockquote id="quest-prompt"></blockquote>
-        </section>
-        <section class="realm-panel reward-preview" aria-labelledby="reward-title">
-          <p class="realm-panel__kicker">Possible reward · Placeholder</p>
-          <h2 id="reward-title"></h2>
-          <p id="reward-description"></p>
-        </section>
-      </div>
-
-      <section class="cartographer-chat" aria-labelledby="cartographer-chat-heading">
-        <span class="cartographer-chat__lantern" aria-hidden="true">✦</span>
-        <div>
-          <p class="realm-panel__kicker">Future guided conversation</p>
-          <h2 id="cartographer-chat-heading">Speak with the Cartographer</h2>
-          <p id="cartographer-placeholder">A guided conversation is coming soon.</p>
-        </div>
-        <button type="button" disabled aria-describedby="cartographer-placeholder">Coming soon</button>
-      </section>
-
-      <a class="realm-entry__return" href="../index.html#realm-map">Explore another realm</a>
     </main>
-    <script type="module" src="realm-page.js"></script>
   </body>
 </html>

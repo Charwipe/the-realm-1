@@ -50,7 +50,7 @@ main, section, article, aside, header, footer, div { min-width: 0; }
   position: fixed;
   z-index: -1;
   border-radius: 50%;
-  filter: blur(110px);
+  filter: blur(72px);
   opacity: 0.16;
   pointer-events: none;
 }
@@ -141,7 +141,7 @@ body > footer,
 .scroll-cue { display: flex; align-items: center; gap: 0.9rem; margin-top: auto; padding-top: 5rem; color: #8f8295; font-size: 0.59rem; letter-spacing: 0.24em; text-decoration: none; text-transform: uppercase; flex-direction: column; }
 .scroll-cue:hover { color: var(--gold-bright); }
 .scroll-cue__line { position: relative; width: 1px; height: 36px; overflow: hidden; background: rgba(216, 182, 110, 0.2); }
-.scroll-cue__line::after { position: absolute; width: 1px; height: 14px; background: var(--gold); content: ""; animation: descend 2s ease-in-out infinite; }
+.scroll-cue__line::after { position: absolute; width: 1px; height: 14px; background: var(--gold); content: ""; }
 
 .cartographer-section {
   max-width: 1240px;
@@ -162,7 +162,7 @@ body > footer,
     linear-gradient(135deg, rgba(24, 18, 38, 0.82), rgba(12, 10, 23, 0.72));
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 245, 218, 0.04);
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
 }
 
 .cartographer-panel::before,
@@ -288,14 +288,13 @@ body > footer,
   border: 1px dashed rgba(216, 182, 110, 0.12);
   border-radius: 50%;
   content: "";
-  animation: cartographer-orbit 28s linear infinite;
+  transform: rotate(10deg);
 }
 
 .cartographer-aura::after {
   inset: 49px;
   border-style: solid;
-  animation-direction: reverse;
-  animation-duration: 20s;
+  transform: rotate(-14deg);
 }
 
 .cartographer-figure {
@@ -397,7 +396,6 @@ body > footer,
   border-radius: 50%;
   background: #ffd778;
   box-shadow: 0 0 13px #f6a73c;
-  animation: lantern-flicker 3s ease-in-out infinite;
 }
 
 .cartographer-map {
@@ -454,12 +452,11 @@ body > footer,
   z-index: 3;
   color: #dec88f;
   text-shadow: 0 0 10px currentColor;
-  animation: dust-drift 5s ease-in-out infinite;
 }
 
 .cartographer-star--one { top: 18%; left: 20%; font-size: 0.65rem; }
-.cartographer-star--two { top: 32%; right: 16%; color: #b7a3cd; font-size: 1.4rem; animation-delay: -2s; }
-.cartographer-star--three { right: 25%; bottom: 25%; font-size: 0.55rem; animation-delay: -3.4s; }
+.cartographer-star--two { top: 32%; right: 16%; color: #b7a3cd; font-size: 1.4rem; }
+.cartographer-star--three { right: 25%; bottom: 25%; font-size: 0.55rem; }
 
 .cartographer-visual__caption {
   position: absolute;
@@ -515,20 +512,19 @@ body > footer,
 .map-frame::after { right: -5px; bottom: -5px; border-right: 1px solid; border-bottom: 1px solid; }
 .map-frame__ornament { position: absolute; top: -9px; left: 50%; z-index: 5; width: 30px; color: var(--gold); background: var(--night); font-size: 0.7rem; text-align: center; transform: translateX(-50%); }
 .map-stage { position: relative; width: 100%; max-width: 100%; overflow: hidden; background: #0a0813; }
-.realm-map { display: block; width: 100%; height: auto; transition: filter 500ms ease, transform 850ms cubic-bezier(.2,.7,.2,1); }
-.map-stage:hover .realm-map { transform: scale(1.004); }
+.realm-map { display: block; width: 100%; height: auto; transition: filter 220ms ease; }
 .map-stage.has-active-realm .realm-map { filter: brightness(0.91) saturate(0.95); }
 .hotspot-layer { position: absolute; inset: 0; width: 100%; height: 100%; }
-.realm-hotspot { fill: transparent; stroke: transparent; stroke-width: 1.5px; cursor: pointer; transition: fill 380ms ease, stroke 380ms ease; vector-effect: non-scaling-stroke; }
+.realm-hotspot { fill: transparent; stroke: transparent; stroke-width: 1.5px; cursor: pointer; transition: fill 180ms ease, stroke 180ms ease; vector-effect: non-scaling-stroke; }
 .hotspot-layer a:focus { outline: none; }
 .hotspot-layer a.is-active .realm-hotspot, .hotspot-layer a:focus .realm-hotspot { fill: color-mix(in srgb, var(--realm-color) 7%, transparent); stroke: color-mix(in srgb, var(--realm-color) 30%, transparent); }
-.hotspot-marker { opacity: 0.56; pointer-events: none; transition: opacity 320ms ease, filter 320ms ease; }
+.hotspot-marker { opacity: 0.56; pointer-events: none; transition: opacity 180ms ease; }
 .hotspot-marker__ring { fill: rgba(8, 7, 19, 0.45); stroke: rgba(243, 234, 215, 0.75); stroke-width: 1px; vector-effect: non-scaling-stroke; }
-.hotspot-marker__core { fill: #fff2cb; filter: drop-shadow(0 0 7px #ffe2a0); }
-.hotspot-marker__pulse { fill: none; stroke: rgba(243, 234, 215, 0.28); stroke-width: 1px; transform-origin: center; vector-effect: non-scaling-stroke; animation: breathe 3s ease-in-out infinite; }
-.hotspot-layer a.is-active .hotspot-marker { opacity: 1; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--realm-color) 55%, transparent)); }
-.map-tooltip { display: flex; position: absolute; z-index: 5; align-items: center; gap: 0.75rem; min-width: 190px; padding: 0.75rem 1rem; border: 1px solid color-mix(in srgb, var(--realm-color) 42%, transparent); opacity: 0; background: rgba(10, 8, 20, 0.88); box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38); pointer-events: none; transform: translate(-50%, calc(-100% - 38px)) scale(0.96); transition: opacity 260ms ease, transform 260ms ease; backdrop-filter: blur(12px); }
-.map-tooltip.is-visible { opacity: 1; transform: translate(-50%, calc(-100% - 38px)) scale(1); }
+.hotspot-marker__core { fill: #fff2cb; }
+.hotspot-marker__pulse { fill: none; stroke: rgba(243, 234, 215, 0.28); stroke-width: 1px; transform-origin: center; vector-effect: non-scaling-stroke; }
+.hotspot-layer a.is-active .hotspot-marker { opacity: 1; }
+.map-tooltip { display: flex; position: absolute; z-index: 5; align-items: center; gap: 0.75rem; min-width: 190px; padding: 0.75rem 1rem; border: 1px solid color-mix(in srgb, var(--realm-color) 42%, transparent); opacity: 0; background: rgba(10, 8, 20, 0.88); box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38); pointer-events: none; transform: translate(-50%, calc(-100% - 38px)); transition: opacity 180ms ease; }
+.map-tooltip.is-visible { opacity: 1; transform: translate(-50%, calc(-100% - 38px)); }
 .map-tooltip__glyph { display: grid; width: 31px; height: 31px; border: 1px solid var(--realm-color); border-radius: 50%; color: var(--realm-color); font-size: 1rem; place-items: center; }
 .map-tooltip__content { display: flex; flex-direction: column; }
 .map-tooltip strong { font-family: var(--serif); font-size: 0.69rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; }
@@ -540,10 +536,10 @@ body > footer,
 .realms-section { max-width: 1240px; margin: 0 auto; padding: 5rem clamp(1.25rem, 4vw, 3rem) 9rem; }
 .section-heading--compact { margin-bottom: 3rem; }
 .realm-grid { display: grid; border-top: 1px solid var(--line); border-left: 1px solid var(--line); grid-template-columns: repeat(3, 1fr); }
-.realm-card { display: grid; position: relative; min-height: 240px; padding: 1.8rem; overflow: hidden; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; background: rgba(17, 13, 29, 0.36); text-decoration: none; transition: background 260ms ease, transform 260ms ease; grid-template-columns: 24px 1fr auto; grid-template-rows: auto 1fr; }
-.realm-card::before { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 50% 15%, color-mix(in srgb, var(--realm-color) 18%, transparent), transparent 62%); content: ""; transition: opacity 260ms ease; }
-.realm-card::after { position: absolute; right: 1rem; bottom: 0; left: 1rem; height: 1px; background: var(--realm-color); content: ""; transform: scaleX(0); transition: transform 260ms ease; }
-.realm-card:hover, .realm-card:focus-visible, .realm-card.is-active { z-index: 2; outline: none; background: rgba(29, 22, 44, 0.78); transform: translateY(-3px); }
+.realm-card { display: grid; position: relative; min-height: 240px; padding: 1.8rem; overflow: hidden; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; background: rgba(17, 13, 29, 0.36); text-decoration: none; transition: background 180ms ease; grid-template-columns: 24px 1fr auto; grid-template-rows: auto 1fr; }
+.realm-card::before { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 50% 15%, color-mix(in srgb, var(--realm-color) 18%, transparent), transparent 62%); content: ""; transition: opacity 180ms ease; }
+.realm-card::after { position: absolute; right: 1rem; bottom: 0; left: 1rem; height: 1px; background: var(--realm-color); content: ""; transform: scaleX(0); transition: transform 180ms ease; }
+.realm-card:hover, .realm-card:focus-visible, .realm-card.is-active { z-index: 2; outline: none; background: rgba(29, 22, 44, 0.78); }
 .realm-card:hover::before, .realm-card:focus-visible::before, .realm-card.is-active::before { opacity: 1; }
 .realm-card:hover::after, .realm-card:focus-visible::after, .realm-card.is-active::after { transform: scaleX(1); }
 .realm-card__number { position: relative; color: var(--realm-color); font-family: var(--serif); font-size: 0.58rem; }
@@ -553,8 +549,8 @@ body > footer,
 .realm-card__deity { margin-top: 0.45rem; color: color-mix(in srgb, var(--realm-color) 72%, white); font-family: var(--serif); font-size: 0.54rem; letter-spacing: 0.045em; line-height: 1.55; }
 .realm-card__description { margin-top: 0.7rem; color: var(--ink-muted); font-size: 0.72rem; line-height: 1.7; }
 .realm-card__prompt { margin-top: auto; padding-top: 1.2rem; color: color-mix(in srgb, var(--realm-color) 75%, white); font-family: var(--serif); font-size: 0.57rem; letter-spacing: 0.06em; }
-.realm-card__arrow { position: relative; color: #706879; font-size: 0.8rem; transition: color 200ms ease, transform 200ms ease; }
-.realm-card:hover .realm-card__arrow { color: var(--realm-color); transform: translate(2px, -2px); }
+.realm-card__arrow { position: relative; color: #706879; font-size: 0.8rem; transition: color 160ms ease; }
+.realm-card:hover .realm-card__arrow { color: var(--realm-color); }
 
 .site-footer { display: flex; align-items: center; justify-content: center; gap: 2rem; padding: 2.5rem 1.5rem; border-top: 1px solid rgba(216, 182, 110, 0.12); color: #756b79; text-align: center; }
 .site-footer p { margin: 0; font-family: var(--serif); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; }

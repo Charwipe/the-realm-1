@@ -55,7 +55,6 @@
     radial-gradient(circle, rgba(224, 252, 255, 0.9) 0 1px, transparent 1.6px) 0 0 / 92px 92px,
     radial-gradient(circle, rgba(111, 221, 230, 0.6) 0 0.8px, transparent 1.4px) 33px 51px / 137px 137px;
   mask-image: linear-gradient(to bottom, #000, transparent 84%);
-  animation: ocean-particles-drift 26s linear infinite;
 }
 
 .ocean-depths::after {
@@ -66,7 +65,7 @@
   background:
     linear-gradient(180deg, transparent, rgba(3, 11, 22, 0.92)),
     radial-gradient(ellipse at 50% 100%, rgba(79, 214, 218, 0.18), transparent 58%);
-  filter: blur(18px);
+  filter: blur(10px);
 }
 
 .ocean-moon {
@@ -89,10 +88,9 @@
   height: 90%;
   opacity: 0.26;
   background: linear-gradient(180deg, rgba(207, 255, 255, 0.38), rgba(67, 215, 226, 0.08) 52%, transparent);
-  filter: blur(18px);
+  filter: blur(10px);
   clip-path: polygon(42% 0, 62% 0, 100% 100%, 0 100%);
   transform-origin: 50% 0;
-  animation: ocean-light-sway 18s ease-in-out infinite alternate;
 }
 
 .ocean-light--one { left: 18%; transform: rotate(8deg); }
@@ -106,12 +104,11 @@
   opacity: 0.52;
   border-radius: 50%;
   background: rgba(74, 159, 185, 0.18);
-  filter: blur(34px);
-  animation: ocean-mist-drift 32s ease-in-out infinite alternate;
+  filter: blur(22px);
 }
 
 .ocean-mist--one { top: 32%; }
-.ocean-mist--two { top: 57%; opacity: 0.32; animation-delay: -11s; animation-direction: alternate-reverse; }
+.ocean-mist--two { top: 57%; opacity: 0.32; }
 
 .ocean-particles {
   position: absolute;
@@ -123,7 +120,6 @@
   background-position: 0 0, 29px 37px;
   background-size: 82px 96px, 111px 127px;
   mask-image: linear-gradient(to bottom, transparent, #000 18%, transparent 92%);
-  animation: ocean-particles-rise 18s linear infinite;
 }
 
 .ocean-current {
@@ -136,11 +132,10 @@
   border-top-color: rgba(179, 244, 255, 0.34);
   border-radius: 50%;
   filter: blur(1px);
-  animation: ocean-current-flow 19s ease-in-out infinite alternate;
 }
 
 .ocean-current--one { top: 46%; }
-.ocean-current--two { top: 66%; opacity: 0.18; animation-delay: -8s; }
+.ocean-current--two { top: 66%; opacity: 0.18; }
 
 .ocean-hero {
   display: flex;
@@ -208,7 +203,6 @@
   box-shadow: inset 0 0 32px rgba(231, 255, 255, 0.13), 0 0 95px rgba(69, 203, 221, 0.18);
   opacity: 0.6;
   transform: translateX(-50%);
-  animation: ocean-pearl-breathe 7s ease-in-out infinite alternate;
 }
 
 .ocean-hero__ring {
@@ -269,7 +263,7 @@
   border-radius: 26px;
   background: linear-gradient(150deg, rgba(9, 35, 58, 0.78), rgba(4, 14, 29, 0.78));
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28), inset 0 0 40px rgba(77, 212, 222, 0.04);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
 }
 
 .ocean-toc__inner::before {
@@ -320,7 +314,7 @@
   font-size: 0.84rem;
   line-height: 1.35;
   text-decoration: none;
-  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
 
 .ocean-toc a span {
@@ -335,7 +329,6 @@
   background: rgba(78, 208, 220, 0.08);
   color: #ffffff;
   outline: none;
-  transform: translateX(2px);
 }
 
 .ocean-article {
@@ -347,7 +340,7 @@
     linear-gradient(180deg, rgba(8, 31, 52, 0.86), rgba(4, 12, 25, 0.88)),
     radial-gradient(circle at 86% 6%, rgba(88, 218, 229, 0.14), transparent 23rem);
   box-shadow: 0 32px 100px rgba(0, 0, 0, 0.38), inset 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
 }
 
 .ocean-article__header,

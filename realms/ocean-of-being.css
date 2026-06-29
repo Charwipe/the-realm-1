@@ -65,7 +65,7 @@
   background:
     linear-gradient(180deg, transparent, rgba(3, 11, 22, 0.92)),
     radial-gradient(ellipse at 50% 100%, rgba(79, 214, 218, 0.18), transparent 58%);
-  filter: blur(10px);
+  filter: blur(4px);
 }
 
 .ocean-moon {
@@ -76,7 +76,7 @@
   height: clamp(120px, 18vw, 220px);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #fff 0 12%, #d6f4ff 36%, rgba(148, 213, 232, 0.62) 62%, transparent 72%);
-  box-shadow: 0 0 55px rgba(197, 245, 255, 0.28), 0 0 140px rgba(73, 200, 218, 0.22);
+  box-shadow: 0 0 34px rgba(197, 245, 255, 0.18);
   opacity: 0.32;
   transform: translateX(-50%);
 }
@@ -88,7 +88,7 @@
   height: 90%;
   opacity: 0.26;
   background: linear-gradient(180deg, rgba(207, 255, 255, 0.38), rgba(67, 215, 226, 0.08) 52%, transparent);
-  filter: blur(10px);
+  filter: blur(4px);
   clip-path: polygon(42% 0, 62% 0, 100% 100%, 0 100%);
   transform-origin: 50% 0;
 }
@@ -104,7 +104,7 @@
   opacity: 0.52;
   border-radius: 50%;
   background: rgba(74, 159, 185, 0.18);
-  filter: blur(22px);
+  filter: blur(8px);
 }
 
 .ocean-mist--one { top: 32%; }
@@ -200,7 +200,7 @@
   background:
     radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.92) 0 6%, rgba(213, 247, 255, 0.35) 18%, transparent 34%),
     radial-gradient(circle, rgba(80, 219, 225, 0.18), transparent 62%);
-  box-shadow: inset 0 0 32px rgba(231, 255, 255, 0.13), 0 0 95px rgba(69, 203, 221, 0.18);
+  box-shadow: inset 0 0 20px rgba(231, 255, 255, 0.1), 0 0 38px rgba(69, 203, 221, 0.12);
   opacity: 0.6;
   transform: translateX(-50%);
 }
@@ -262,8 +262,8 @@
   border: 1px solid var(--ocean-line);
   border-radius: 26px;
   background: linear-gradient(150deg, rgba(9, 35, 58, 0.78), rgba(4, 14, 29, 0.78));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28), inset 0 0 40px rgba(77, 212, 222, 0.04);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24), inset 0 0 28px rgba(77, 212, 222, 0.035);
+  backdrop-filter: none;
 }
 
 .ocean-toc__inner::before {
@@ -314,7 +314,7 @@
   font-size: 0.84rem;
   line-height: 1.35;
   text-decoration: none;
-  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+  transition: none;
 }
 
 .ocean-toc a span {
@@ -339,8 +339,8 @@
   background:
     linear-gradient(180deg, rgba(8, 31, 52, 0.86), rgba(4, 12, 25, 0.88)),
     radial-gradient(circle at 86% 6%, rgba(88, 218, 229, 0.14), transparent 23rem);
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.38), inset 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: none;
 }
 
 .ocean-article__header,
@@ -434,7 +434,7 @@
   border-radius: 18px;
   color: #ecfdff;
   background: rgba(74, 204, 218, 0.08);
-  box-shadow: inset 0 0 24px rgba(87, 219, 226, 0.04);
+  box-shadow: none;
   font-family: var(--serif);
   font-size: clamp(1.05rem, 1.7vw, 1.2rem);
   line-height: 1.7;
@@ -455,7 +455,7 @@
   background:
     linear-gradient(150deg, rgba(9, 37, 61, 0.74), rgba(2, 13, 25, 0.78)),
     radial-gradient(circle at 92% 0%, rgba(111, 228, 236, 0.15), transparent 14rem);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24), inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .ocean-warning blockquote::before {

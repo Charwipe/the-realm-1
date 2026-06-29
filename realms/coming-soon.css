@@ -50,7 +50,7 @@
   background:
     radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--realm-color) 16%, transparent), transparent 18rem),
     linear-gradient(145deg, rgba(18, 13, 31, 0.86), rgba(9, 8, 19, 0.88));
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.42), inset 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.34), inset 0 1px rgba(255, 255, 255, 0.05);
   text-align: center;
 }
 
@@ -90,7 +90,7 @@
   border-radius: 50%;
   color: color-mix(in srgb, var(--realm-color) 72%, white);
   background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 42px color-mix(in srgb, var(--realm-color) 24%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--realm-color) 16%, transparent);
   font-family: var(--serif);
   font-size: 2.35rem;
   place-items: center;

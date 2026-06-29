@@ -19,9 +19,9 @@
   letter-spacing: 0.16em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 180ms ease;
+  transition: none;
 }
-.back-link span { color: var(--realm-color); font-size: 0.9rem; transition: transform 180ms ease; }
+.back-link span { color: var(--realm-color); font-size: 0.9rem; transition: none; }
 .back-link:hover, .back-link:focus-visible { color: var(--ink); outline: none; }
 .back-link:hover span, .back-link:focus-visible span { transform: translateX(-3px); }
 
@@ -52,7 +52,7 @@
   opacity: 0.13;
   background: var(--realm-color);
   content: "";
-  filter: blur(110px);
+  filter: blur(28px);
   transform: translate(-50%, -50%);
 }
 .realm-entry__number, .realm-panel__kicker {
@@ -72,7 +72,7 @@
   border-radius: 50%;
   color: var(--realm-color);
   background: color-mix(in srgb, var(--realm-color) 7%, transparent);
-  box-shadow: 0 0 50px color-mix(in srgb, var(--realm-color) 12%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--realm-color) 8%, transparent);
   font-size: 2rem;
   place-items: center;
 }
@@ -91,8 +91,8 @@
   border: 1px solid color-mix(in srgb, var(--realm-color) 19%, rgba(216, 182, 110, 0.12));
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(24, 18, 38, 0.76), rgba(12, 10, 23, 0.65));
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+  backdrop-filter: none;
 }
 .realm-panel::after { position: absolute; right: 1.4rem; bottom: 0; left: 1.4rem; height: 1px; background: linear-gradient(90deg, transparent, var(--realm-color), transparent); content: ""; opacity: 0.4; }
 .realm-panel h2, .cartographer-chat h2 { margin: 0.75rem 0 0; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 400; line-height: 1.35; }
@@ -131,7 +131,7 @@
 .cartographer-chat p:last-child { margin: 0.55rem 0 0; color: var(--ink-muted); font-size: 0.72rem; }
 .cartographer-chat button { padding: 0.75rem 1rem; border: 1px solid rgba(216,182,110,0.2); color: #766c7b; background: transparent; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: not-allowed; }
 
-.realm-entry__return, .realm-button { display: table; margin: 3rem auto 0; padding: 0.85rem 1.25rem; border: 1px solid color-mix(in srgb, var(--realm-color) 35%, transparent); color: var(--ink); background: color-mix(in srgb, var(--realm-color) 5%, transparent); font-size: 0.6rem; letter-spacing: 0.16em; text-decoration: none; text-transform: uppercase; transition: border-color 180ms ease, background 180ms ease; }
+.realm-entry__return, .realm-button { display: table; margin: 3rem auto 0; padding: 0.85rem 1.25rem; border: 1px solid color-mix(in srgb, var(--realm-color) 35%, transparent); color: var(--ink); background: color-mix(in srgb, var(--realm-color) 5%, transparent); font-size: 0.6rem; letter-spacing: 0.16em; text-decoration: none; text-transform: uppercase; transition: none; }
 .realm-entry__return:hover, .realm-entry__return:focus-visible, .realm-button:hover, .realm-button:focus-visible { border-color: var(--realm-color); outline: none; background: color-mix(in srgb, var(--realm-color) 12%, transparent); }
 .realm-error { padding: 8rem 1rem; text-align: center; }
 

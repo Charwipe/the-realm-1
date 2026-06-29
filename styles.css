@@ -33,11 +33,11 @@ body {
   font-weight: 300;
 }
 body::before {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.24) 0 1px, transparent 1.5px) 0 0 / 120px 120px;
   content: "";
   pointer-events: none;
 }
@@ -47,11 +47,11 @@ img, svg { max-width: 100%; }
 main, section, article, aside, header, footer, div { min-width: 0; }
 
 .aurora {
-  position: fixed;
+  position: absolute;
   z-index: -1;
   border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.16;
+  filter: blur(30px);
+  opacity: 0.08;
   pointer-events: none;
 }
 .aurora--one { top: 8rem; left: -10rem; width: 28rem; height: 28rem; background: #663c94; }
@@ -160,9 +160,9 @@ body > footer,
     radial-gradient(circle at 82% 40%, rgba(219, 158, 79, 0.13), transparent 28%),
     radial-gradient(circle at 15% 0%, rgba(104, 66, 147, 0.12), transparent 36%),
     linear-gradient(135deg, rgba(24, 18, 38, 0.82), rgba(12, 10, 23, 0.72));
-  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 245, 218, 0.04);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 245, 218, 0.04);
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
 }
 
 .cartographer-panel::before,
@@ -275,9 +275,7 @@ body > footer,
   height: 280px;
   border: 1px solid rgba(232, 187, 99, 0.12);
   border-radius: 50%;
-  box-shadow:
-    0 0 80px rgba(219, 151, 65, 0.11),
-    inset 0 0 70px rgba(109, 72, 145, 0.1);
+  box-shadow: inset 0 0 40px rgba(109, 72, 145, 0.08);
   transform: translate(-50%, -50%);
 }
 
@@ -376,7 +374,7 @@ body > footer,
   border: 1px solid #af824b;
   border-radius: 6px 6px 10px 10px;
   background: rgba(73, 42, 25, 0.78);
-  box-shadow: 0 0 26px rgba(245, 175, 70, 0.48), 0 0 62px rgba(239, 152, 51, 0.28);
+  box-shadow: 0 0 18px rgba(245, 175, 70, 0.36);
 }
 
 .cartographer-lantern__handle {
@@ -443,7 +441,7 @@ body > footer,
   height: 34px;
   border-radius: 50%;
   background: radial-gradient(ellipse, rgba(218, 168, 85, 0.18), transparent 67%);
-  filter: blur(6px);
+  filter: blur(3px);
   transform: translateX(-50%);
 }
 
@@ -506,24 +504,24 @@ body > footer,
 .section-heading { margin-bottom: 2.5rem; text-align: center; }
 .section-heading h2 { margin: 0.75rem 0 0; font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.05em; }
 .section-heading > p:last-child { margin: 0.8rem 0 0; color: var(--ink-muted); font-size: 0.75rem; letter-spacing: 0.07em; }
-.map-frame { position: relative; max-width: 1440px; margin: auto; padding: clamp(0.35rem, 0.8vw, 0.65rem); border: 1px solid var(--line); background: rgba(17, 12, 28, 0.65); box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 80px rgba(100, 59, 127, 0.08); }
+.map-frame { position: relative; max-width: 1440px; margin: auto; padding: clamp(0.35rem, 0.8vw, 0.65rem); border: 1px solid var(--line); background: rgba(17, 12, 28, 0.65); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.42); }
 .map-frame::before, .map-frame::after { position: absolute; z-index: 3; width: 52px; height: 52px; border-color: rgba(231, 197, 128, 0.6); content: ""; pointer-events: none; }
 .map-frame::before { top: -5px; left: -5px; border-top: 1px solid; border-left: 1px solid; }
 .map-frame::after { right: -5px; bottom: -5px; border-right: 1px solid; border-bottom: 1px solid; }
 .map-frame__ornament { position: absolute; top: -9px; left: 50%; z-index: 5; width: 30px; color: var(--gold); background: var(--night); font-size: 0.7rem; text-align: center; transform: translateX(-50%); }
 .map-stage { position: relative; width: 100%; max-width: 100%; overflow: hidden; background: #0a0813; }
-.realm-map { display: block; width: 100%; height: auto; transition: filter 220ms ease; }
-.map-stage.has-active-realm .realm-map { filter: brightness(0.91) saturate(0.95); }
+.realm-map { display: block; width: 100%; height: auto; transition: none; }
+.map-stage.has-active-realm .realm-map { filter: none; }
 .hotspot-layer { position: absolute; inset: 0; width: 100%; height: 100%; }
-.realm-hotspot { fill: transparent; stroke: transparent; stroke-width: 1.5px; cursor: pointer; transition: fill 180ms ease, stroke 180ms ease; vector-effect: non-scaling-stroke; }
+.realm-hotspot { fill: transparent; stroke: transparent; stroke-width: 1.5px; cursor: pointer; transition: none; vector-effect: non-scaling-stroke; }
 .hotspot-layer a:focus { outline: none; }
 .hotspot-layer a.is-active .realm-hotspot, .hotspot-layer a:focus .realm-hotspot { fill: color-mix(in srgb, var(--realm-color) 7%, transparent); stroke: color-mix(in srgb, var(--realm-color) 30%, transparent); }
-.hotspot-marker { opacity: 0.56; pointer-events: none; transition: opacity 180ms ease; }
+.hotspot-marker { opacity: 0.56; pointer-events: none; transition: none; }
 .hotspot-marker__ring { fill: rgba(8, 7, 19, 0.45); stroke: rgba(243, 234, 215, 0.75); stroke-width: 1px; vector-effect: non-scaling-stroke; }
 .hotspot-marker__core { fill: #fff2cb; }
 .hotspot-marker__pulse { fill: none; stroke: rgba(243, 234, 215, 0.28); stroke-width: 1px; transform-origin: center; vector-effect: non-scaling-stroke; }
 .hotspot-layer a.is-active .hotspot-marker { opacity: 1; }
-.map-tooltip { display: flex; position: absolute; z-index: 5; align-items: center; gap: 0.75rem; min-width: 190px; padding: 0.75rem 1rem; border: 1px solid color-mix(in srgb, var(--realm-color) 42%, transparent); opacity: 0; background: rgba(10, 8, 20, 0.88); box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38); pointer-events: none; transform: translate(-50%, calc(-100% - 38px)); transition: opacity 180ms ease; }
+.map-tooltip { display: flex; position: absolute; z-index: 5; align-items: center; gap: 0.75rem; min-width: 190px; padding: 0.75rem 1rem; border: 1px solid color-mix(in srgb, var(--realm-color) 42%, transparent); opacity: 0; background: rgba(10, 8, 20, 0.88); box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38); pointer-events: none; transform: translate(-50%, calc(-100% - 38px)); transition: none; }
 .map-tooltip.is-visible { opacity: 1; transform: translate(-50%, calc(-100% - 38px)); }
 .map-tooltip__glyph { display: grid; width: 31px; height: 31px; border: 1px solid var(--realm-color); border-radius: 50%; color: var(--realm-color); font-size: 1rem; place-items: center; }
 .map-tooltip__content { display: flex; flex-direction: column; }
@@ -536,9 +534,9 @@ body > footer,
 .realms-section { max-width: 1240px; margin: 0 auto; padding: 5rem clamp(1.25rem, 4vw, 3rem) 9rem; }
 .section-heading--compact { margin-bottom: 3rem; }
 .realm-grid { display: grid; border-top: 1px solid var(--line); border-left: 1px solid var(--line); grid-template-columns: repeat(3, 1fr); }
-.realm-card { display: grid; position: relative; min-height: 240px; padding: 1.8rem; overflow: hidden; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; background: rgba(17, 13, 29, 0.36); text-decoration: none; transition: background 180ms ease; grid-template-columns: 24px 1fr auto; grid-template-rows: auto 1fr; }
-.realm-card::before { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 50% 15%, color-mix(in srgb, var(--realm-color) 18%, transparent), transparent 62%); content: ""; transition: opacity 180ms ease; }
-.realm-card::after { position: absolute; right: 1rem; bottom: 0; left: 1rem; height: 1px; background: var(--realm-color); content: ""; transform: scaleX(0); transition: transform 180ms ease; }
+.realm-card { display: grid; position: relative; min-height: 240px; padding: 1.8rem; overflow: hidden; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; background: rgba(17, 13, 29, 0.36); text-decoration: none; transition: none; grid-template-columns: 24px 1fr auto; grid-template-rows: auto 1fr; }
+.realm-card::before { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 50% 15%, color-mix(in srgb, var(--realm-color) 18%, transparent), transparent 62%); content: ""; transition: none; }
+.realm-card::after { position: absolute; right: 1rem; bottom: 0; left: 1rem; height: 1px; background: var(--realm-color); content: ""; transform: scaleX(0); transition: none; }
 .realm-card:hover, .realm-card:focus-visible, .realm-card.is-active { z-index: 2; outline: none; background: rgba(29, 22, 44, 0.78); }
 .realm-card:hover::before, .realm-card:focus-visible::before, .realm-card.is-active::before { opacity: 1; }
 .realm-card:hover::after, .realm-card:focus-visible::after, .realm-card.is-active::after { transform: scaleX(1); }
@@ -549,7 +547,7 @@ body > footer,
 .realm-card__deity { margin-top: 0.45rem; color: color-mix(in srgb, var(--realm-color) 72%, white); font-family: var(--serif); font-size: 0.54rem; letter-spacing: 0.045em; line-height: 1.55; }
 .realm-card__description { margin-top: 0.7rem; color: var(--ink-muted); font-size: 0.72rem; line-height: 1.7; }
 .realm-card__prompt { margin-top: auto; padding-top: 1.2rem; color: color-mix(in srgb, var(--realm-color) 75%, white); font-family: var(--serif); font-size: 0.57rem; letter-spacing: 0.06em; }
-.realm-card__arrow { position: relative; color: #706879; font-size: 0.8rem; transition: color 160ms ease; }
+.realm-card__arrow { position: relative; color: #706879; font-size: 0.8rem; transition: none; }
 .realm-card:hover .realm-card__arrow { color: var(--realm-color); }
 
 .site-footer { display: flex; align-items: center; justify-content: center; gap: 2rem; padding: 2.5rem 1.5rem; border-top: 1px solid rgba(216, 182, 110, 0.12); color: #756b79; text-align: center; }

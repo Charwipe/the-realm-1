@@ -226,3 +226,10 @@
     border-radius: 18px;
   }
 }
+
+.coming-soon__substack .newsletter-embed {
+  margin-top: 1rem;
+  padding: clamp(0.85rem, 2.6vw, 1.25rem);
+  border-color: color-mix(in srgb, var(--realm-color) 24%, var(--line));
+  background: rgba(8, 7, 19, 0.36);
+}

@@ -641,3 +641,40 @@
     animation: none;
   }
 }
+
+.ocean-newsletter {
+  position: relative;
+  overflow: hidden;
+  margin: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 5vw, 4rem) 0;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid rgba(159, 231, 242, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(159, 231, 242, 0.13), transparent 18rem),
+    linear-gradient(145deg, rgba(8, 31, 48, 0.56), rgba(5, 14, 28, 0.68));
+  box-shadow: 0 20px 45px rgba(0, 8, 18, 0.22), inset 0 1px rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.ocean-newsletter h2 {
+  margin: 0.35rem auto 0;
+  max-width: 44rem;
+  color: #eefcff;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 4vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+}
+
+.ocean-newsletter .newsletter-embed {
+  border-color: rgba(159, 231, 242, 0.18);
+  background: rgba(3, 18, 34, 0.48);
+}
+
+@media (max-width: 620px) {
+  .ocean-newsletter {
+    margin-inline: 1rem;
+    border-radius: 22px;
+  }
+}

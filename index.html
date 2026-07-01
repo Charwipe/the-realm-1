@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="REALM is an interactive map of consciousness. Explore six mythic territories of inner life."
+    />
+    <title>REALM — An interactive map of consciousness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora aurora--one" aria-hidden="true"></div>
+    <div class="aurora aurora--two" aria-hidden="true"></div>
+    <div class="star-field" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="REALM home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span>REALM</span>
+      </a>
+      <p class="edition">Atlas I · The Inner Worlds</p>
+      <p class="realm-count"><span aria-hidden="true">✧</span> Six realms await</p>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow"><span></span> Enter the inner worlds <span></span></p>
+        <h1 id="hero-title">REALM</h1>
+        <p class="subtitle">An interactive map of consciousness</p>
+        <p class="introduction">Six territories. One living mind. Choose a realm below and begin your passage inward.</p>
+        <a class="scroll-cue" href="#realm-map">
+          <span>Enter the map</span>
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section class="map-section" id="realm-map" aria-labelledby="map-heading">
+        <div class="section-heading">
+          <p class="section-kicker">The atlas of mind</p>
+          <h2 id="map-heading">Where will you begin?</h2>
+          <p>Move across the map to reveal its realms</p>
+        </div>
+
+        <div class="map-frame">
+          <div class="map-frame__ornament map-frame__ornament--top" aria-hidden="true">✦</div>
+          <div class="map-stage" id="map-stage">
+            <img
+              class="realm-map"
+              src="realm-landing.jpg"
+              alt="A fantastical map containing an ocean, theatre, forge, flowering field, winding path, and mountain."
+            />
+            <svg
+              class="hotspot-layer"
+              id="hotspot-layer"
+              viewBox="0 0 2048 1365"
+              role="group"
+              aria-label="Interactive realm regions"
+              preserveAspectRatio="none"
+            ></svg>
+            <div class="map-tooltip" id="map-tooltip" role="status" aria-live="polite">
+              <span class="map-tooltip__glyph" aria-hidden="true"></span>
+              <span class="map-tooltip__content">
+                <strong></strong>
+                <small>Enter this realm</small>
+              </span>
+            </div>
+          </div>
+          <div class="map-frame__footer" aria-hidden="true">
+            <span></span><i>✦</i><span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="substack-section" aria-labelledby="substack-heading">
+        <div class="substack-card">
+          <p class="section-kicker">Dispatches from the edge</p>
+          <h2 id="substack-heading">Follow the unveiling of The Realm</h2>
+          <iframe
+            class="substack-embed"
+            title="Subscribe to Adrian Schug on Substack"
+            src="https://adrianschug.substack.com/embed?transparent=1&light=1"
+            width="480"
+            height="150"
+            style="border: 1px solid rgba(216, 182, 110, 0.22); background: #080713"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="realms-section" aria-labelledby="realms-heading" hidden>
+        <div class="section-heading section-heading--compact">
+          <p class="section-kicker">Six ways of knowing</p>
+          <h2 id="realms-heading">The realms of consciousness</h2>
+        </div>
+        <div class="realm-grid" id="realm-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-sigil" aria-hidden="true">☉</span>
+      <p>The map is not the territory. The journey is yours.</p>
+      <span class="footer-sigil" aria-hidden="true">☽</span>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

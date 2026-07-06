@@ -697,3 +697,108 @@
     line-height: 1.8;
   }
 }
+
+/* Content-section alignment with Ocean of Being. */
+.forge-layout {
+  width: min(1180px, calc(100% - 2rem));
+  margin: -3.5rem auto 0;
+  padding: 0 0 9rem;
+  gap: 2rem;
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+}
+
+.forge-toc {
+  position: static;
+  min-width: 0;
+}
+
+.forge-toc__inner {
+  position: sticky;
+  top: 2rem;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid rgba(237, 157, 86, 0.17);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgba(36, 18, 13, 0.78), rgba(12, 8, 13, 0.8));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.forge-toc__inner::before {
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background: radial-gradient(circle at 20% 0%, rgba(237, 157, 86, 0.15), transparent 40%);
+  content: "";
+  pointer-events: none;
+}
+
+.forge-toc__label,
+.forge-article__header p {
+  color: var(--forge-orange);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}
+
+.forge-toc h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0.45rem 0 1rem;
+  color: #fff3e3;
+  font-size: 1.3rem;
+}
+
+.forge-toc ol {
+  position: relative;
+  z-index: 1;
+  gap: 0.45rem;
+}
+
+.forge-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.62rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #d7c7bb;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  grid-template-columns: none;
+}
+
+.forge-toc a span {
+  color: var(--forge-orange);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.forge-toc a:hover,
+.forge-toc a:focus-visible {
+  border-color: rgba(237, 157, 86, 0.27);
+  background: rgba(237, 157, 86, 0.08);
+  color: #ffffff;
+}
+
+@media (max-width: 850px) {
+  .forge-layout {
+    width: min(100%, calc(100% - 1rem));
+    margin-top: -2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .forge-toc__inner {
+    position: relative;
+    top: auto;
+  }
+
+  .forge-toc ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .forge-toc ol {
+    grid-template-columns: 1fr;
+  }
+}

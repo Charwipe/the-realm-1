@@ -678,3 +678,9 @@
     border-radius: 22px;
   }
 }
+
+.ocean-newsletter a {
+  color: #9fe7f2;
+  text-decoration-color: rgba(159, 231, 242, 0.38);
+  text-underline-offset: 0.16em;
+}

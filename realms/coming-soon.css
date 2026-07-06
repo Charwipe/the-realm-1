@@ -233,3 +233,9 @@
   border-color: color-mix(in srgb, var(--realm-color) 24%, var(--line));
   background: rgba(8, 7, 19, 0.36);
 }
+
+.coming-soon__substack a {
+  color: color-mix(in srgb, var(--realm-color) 56%, var(--gold));
+  text-decoration-color: color-mix(in srgb, var(--realm-color) 34%, transparent);
+  text-underline-offset: 0.16em;
+}

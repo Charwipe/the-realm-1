@@ -700,3 +700,10 @@ body > footer,
 .newsletter-embed > * {
   max-width: 100%;
 }
+
+.newsletter-embed a,
+.substack-card a {
+  color: var(--gold);
+  text-decoration-color: rgba(216, 182, 110, 0.42);
+  text-underline-offset: 0.16em;
+}

@@ -460,3 +460,45 @@
   .forge-scroll span:last-child { animation: none !important; }
   .forge-lightning { display: none; }
 }
+
+.forge-newsletter {
+  position: relative;
+  overflow: hidden;
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0 0;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid rgba(237, 157, 86, 0.22);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(237, 157, 86, 0.14), transparent 18rem),
+    linear-gradient(145deg, rgba(38, 18, 12, 0.58), rgba(12, 8, 15, 0.72));
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24), inset 0 1px rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.forge-newsletter h2 {
+  margin: 0.35rem auto 0;
+  max-width: 46rem;
+  color: #fff1dd;
+  font-family: var(--serif);
+  font-size: clamp(1.65rem, 4vw, 2.55rem);
+  font-weight: 400;
+  letter-spacing: 0.055em;
+  line-height: 1.17;
+}
+
+.forge-newsletter a {
+  color: var(--forge-gold);
+  text-decoration-color: rgba(218, 182, 110, 0.42);
+  text-underline-offset: 0.16em;
+}
+
+.forge-newsletter .newsletter-embed {
+  border-color: rgba(237, 157, 86, 0.2);
+  background: rgba(16, 10, 13, 0.52);
+}
+
+@media (max-width: 520px) {
+  .forge-newsletter {
+    border-radius: 22px;
+  }
+}

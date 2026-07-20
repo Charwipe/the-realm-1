@@ -802,3 +802,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Keep the Forge menu sticky through the article, matching Ocean's stretched grid column. */
+.forge-layout {
+  align-items: stretch;
+}

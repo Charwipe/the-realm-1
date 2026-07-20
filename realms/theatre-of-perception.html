@@ -3,21 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Theatre of Perception is coming soon." />
-    <title>The Theatre of Perception — Coming Soon — REALM</title>
+    <meta
+      name="description"
+      content="At the center stage of experience, a bright light illuminates the play."
+    />
+    <title>The Theatre of Perception — REALM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="realm-page.css" />
-    <link rel="stylesheet" href="coming-soon.css" />
+    <link rel="stylesheet" href="theatre-of-perception.css" />
   </head>
-  <body class="realm-page coming-soon-page" style="--realm-color: #c58fd9">
-    <div class="aurora aurora--one" aria-hidden="true"></div>
-    <div class="aurora aurora--two" aria-hidden="true"></div>
-    <div class="star-field" aria-hidden="true"></div>
+  <body class="realm-page theatre-page">
+    <div class="theatre-atmosphere" aria-hidden="true">
+      <div class="theatre-atmosphere__stars"></div>
+      <div class="theatre-atmosphere__curtain theatre-atmosphere__curtain--left"></div>
+      <div class="theatre-atmosphere__curtain theatre-atmosphere__curtain--right"></div>
+      <div class="theatre-atmosphere__spotlight"></div>
+    </div>
 
-    <header class="site-header realm-page__header">
+    <header class="site-header realm-page__header theatre-header">
       <a class="brand" href="../index.html" aria-label="REALM home">
         <span class="brand__mark" aria-hidden="true">✦</span>
         <span>REALM</span>
@@ -25,24 +34,196 @@
       <a class="back-link" href="../index.html#realm-map"><span aria-hidden="true">←</span> Return to the map</a>
     </header>
 
-    <main class="coming-soon" aria-labelledby="realm-title">
-      <section class="coming-soon__panel">
-        <div class="coming-soon__glyph" aria-hidden="true">◉</div>
-        <p class="coming-soon__kicker">Realm archive</p>
-        <h1 id="realm-title">The Theatre of Perception</h1>
-        <p class="coming-soon__message">Coming soon.</p>
-        <div class="coming-soon__divider" aria-hidden="true">✦</div>
-        <div class="coming-soon__substack">
-          <p><a href="https://substack.com/@adrianschug">Follow me on Substack</a> or subscribe to my newsletter to participate in The Realm.</p>
-          <div class="newsletter-embed">
-            <script async data-uid="1137d771f3" src="https://adrian-schug.kit.com/1137d771f3/index.js"></script>
-          </div>
+    <main>
+      <section class="theatre-hero" aria-labelledby="theatre-title">
+        <div class="theatre-hero__lamp" aria-hidden="true">
+          <span class="theatre-hero__halo theatre-hero__halo--one"></span>
+          <span class="theatre-hero__halo theatre-hero__halo--two"></span>
+          <span class="theatre-hero__iris"></span>
         </div>
-        <div class="coming-soon__actions">
-          <a class="coming-soon__link" href="../index.html#realm-map">Return to the map</a>
-          <a class="coming-soon__link" href="../index.html">REALM home</a>
-        </div>
+        <h1 id="theatre-title">The Theatre of Perception</h1>
+        <p class="theatre-hero__subtitle">At the center stage of experience, a bright light illuminates the play.</p>
       </section>
+
+      <div class="theatre-layout">
+        <aside class="theatre-toc" aria-labelledby="contents-heading">
+          <div class="theatre-toc__inner">
+            <p class="theatre-toc__label">Lore index</p>
+            <h2 id="contents-heading">Contents</h2>
+            <nav aria-label="Theatre of Perception contents">
+              <ol>
+                <li><a href="#stage"><span>01</span>The Stage</a></li>
+                <li><a href="#curtain"><span>02</span>The Curtain of Shadows</a></li>
+                <li><a href="#veloria"><span>03</span>Veloria</a></li>
+                <li><a href="#eternal-dance"><span>04</span>The Eternal Dance</a></li>
+                <li><a href="#many-plays"><span>05</span>One Theatre, Many Plays</a></li>
+                <li><a href="#attendants"><span>06</span>The Attendants</a></li>
+                <li><a href="#audience"><span>07</span>The Task of the Audience</a></li>
+                <li><a href="#sayings"><span>08</span>Common Sayings</a></li>
+                <li><a href="#cartographers-note"><span>09</span>Cartographer's Note</a></li>
+                <li><a href="#contemplation"><span>10</span>Contemplation</a></li>
+              </ol>
+            </nav>
+          </div>
+        </aside>
+
+        <article class="theatre-article">
+          <header class="theatre-article__header">
+            <p>Archive entry · The Theatre of Perception</p>
+            <span aria-hidden="true">◉</span>
+          </header>
+
+          <section class="theatre-lore-section theatre-lore-section--lead" id="stage" aria-labelledby="stage-heading">
+            <p class="theatre-section-number" aria-hidden="true">I</p>
+            <h2 id="stage-heading">The Stage</h2>
+            <div class="theatre-prose">
+              <p>At the center of experience lies a brightly illuminated stage.</p>
+              <p>We open our eyes, and the world appears effortlessly.<br />A room.<br />A body.<br />Other people.<br />A story already in motion.</p>
+              <p>Everything within the light becomes part of the performance.<br />But for anything to appear, everything else must remain hidden.</p>
+              <p>This is the eternal duty of Veloria, mistress of the stage. She chooses not only the dancers, but also the dance.</p>
+              <p>Standing just outside the light, she holds a curtain of shadows, revealing and hiding the elements of the play.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section" id="curtain" aria-labelledby="curtain-heading">
+            <p class="theatre-section-number" aria-hidden="true">II</p>
+            <h2 id="curtain-heading">The Curtain of Shadows</h2>
+            <div class="theatre-prose">
+              <p>The light fades as it reaches the edge of the bright sphere we inhabit.<br />There, Veloria holds judgment over everything approaching her curtain, deciding whether it will enter the light or remain hidden.</p>
+              <p>Behind it lies everything that could appear, but does not.</p>
+              <p>Forgotten memories.<br />Unnoticed objects.<br />Unspoken possibilities.<br />The countless stories the present moment might have become.</p>
+              <p>The curtain does not separate reality from illusion.<br />It separates what enters experience from what remains outside it.</p>
+              <p>Whatever is hidden still shapes the play.</p>
+              <p><strong>The shadows remember.</strong></p>
+              <p>Even though we have spent centuries studying the mechanisms behind the curtain, there is always another hidden layer beneath each discovery.</p>
+              <p>The curtain can be moved.<br />It can never be removed.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section" id="veloria" aria-labelledby="veloria-heading">
+            <p class="theatre-section-number" aria-hidden="true">III</p>
+            <h2 id="veloria-heading">Veloria</h2>
+            <div class="theatre-prose">
+              <p>The curtain is held by Veloria, mistress of the stage.</p>
+              <p>She is portrayed as a diffuse and blurry figure, most of her body hidden behind the shadows she carries.<br />Bound to her task, she can never fully enter the light herself.</p>
+              <p>Veloria decides which dancers appear and which dance begins. Her choices are shaped by the history of the individual, the culture surrounding them, and the long memory of their lineage.</p>
+              <p>She remembers everything she has ever allowed onto the stage.</p>
+              <p>Veloria knows what could be.<br />But she cannot decide what we will do.</p>
+              <p>She creates the performance.<br />She does not determine its meaning.</p>
+              <p>That responsibility belongs to those within the light.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section" id="eternal-dance" aria-labelledby="dance-heading">
+            <p class="theatre-section-number" aria-hidden="true">IV</p>
+            <h2 id="dance-heading">The Eternal Dance</h2>
+            <div class="theatre-prose">
+              <p>The play is in constant motion.</p>
+              <p>Every object, room, creature, and situation carries a frequency of its own. Beneath the noise of the world, each sings its part in an eternal composition.</p>
+              <p>The stars hum.<br />The mountains purr.<br />The forests breathe in rhythm.</p>
+              <p>Veloria hears the whole song.</p>
+              <p>Like every great artist, she knows that good music requires both repetition and surprise. Too much repetition and the dance becomes lifeless. Too much surprise and it loses its form.</p>
+              <p>Whatever may seem like a failure of performance is really a failure of attention.</p>
+              <p>The point of a dance is not to arrive at the other side of the room.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section" id="many-plays" aria-labelledby="plays-heading">
+            <p class="theatre-section-number" aria-hidden="true">V</p>
+            <h2 id="plays-heading">One Theatre, Many Plays</h2>
+            <div class="theatre-prose">
+              <p>Every conscious being witnesses a different version of the play.</p>
+              <p>Each performance is shaped by its own instantiation of Veloria. Yet they all unfold within the same Theatre.</p>
+              <p>Our performances differ.<br />But they are more alike than they are different.</p>
+              <p>We share the stage, its dancers, and many of the ancient patterns beneath the dance. This overlap makes understanding possible.</p>
+              <p>Even so, no two spectators see exactly the same play. What appears obvious within one light may remain hidden from another.</p>
+              <p>Such tension is not an interruption of the play. It is part of it.</p>
+              <p>The attendants are therefore taught to pause when their expectations meet the world in conflict.</p>
+              <p>The stage may be revealing something they have not yet learned to see.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section theatre-lore-section--attendants" id="attendants" aria-labelledby="attendants-heading">
+            <p class="theatre-section-number" aria-hidden="true">VI</p>
+            <h2 id="attendants-heading">The Attendants</h2>
+            <div class="theatre-prose">
+              <p>The attendants of Veloria do not attempt to choose what enters the light.<br />They train themselves to meet whatever appears.</p>
+              <p>Meditation teaches them to watch the changing stage without grasping at its dancers or pushing them away. Art allows them to join Veloria in the creation of meaning.</p>
+              <p>Every act of attention is participation.</p>
+              <p>There is no seat outside the Theatre.</p>
+              <p>The attendants approach even the shadows with curiosity and courage. They know that freedom does not come from controlling the performance, but from meeting it without clinging to any particular scene.</p>
+              <p>Those ready for transformation sometimes ask Veloria to reveal the truth rather than the story they already know.</p>
+              <p>It is said that anyone who asks her a genuine question will receive an answer.</p>
+              <p>It may appear as an image.<br />A fantasy.<br />A memory.<br />A vision.<br />A thought.</p>
+              <p>But Veloria does not tell the seeker what to believe.<br />She only lifts the curtain.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section theatre-lore-section--task" id="audience" aria-labelledby="audience-heading">
+            <p class="theatre-section-number" aria-hidden="true">VII</p>
+            <h2 id="audience-heading">The Task of the Audience</h2>
+            <div class="theatre-prose">
+              <p>Not everything appearing upon the stage is true.</p>
+              <p>A fear may enter the light.<br />So may a lie.<br />So may a path toward wisdom.</p>
+              <p>All are part of the performance.</p>
+              <p>Veloria does not distinguish between right and wrong. She reveals what is present, what has been learned, and what the moment allows to appear.</p>
+              <p>Our task is to pay attention.</p>
+              <p>To follow what we know to be true.<br />To move away from the lies.<br />To meet uncertainty with curiosity rather than retreat.</p>
+              <p>The highest purpose of the Theatre is not to produce a happy play.</p>
+              <p>It is to allow pain, change, beauty, and loss to become part of a meaningful performance.</p>
+              <p>Veloria chooses the scene.<br />We choose how to dance.</p>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section" id="sayings" aria-labelledby="sayings-heading">
+            <p class="theatre-section-number" aria-hidden="true">VIII</p>
+            <h2 id="sayings-heading">Common Sayings</h2>
+            <div class="theatre-sayings">
+              <blockquote>“The shadows remember.”</blockquote>
+              <blockquote>“The stage always turns.”</blockquote>
+              <blockquote>"Choose your dance."</blockquote>
+            </div>
+          </section>
+
+          <section class="theatre-lore-section theatre-note" id="cartographers-note" aria-labelledby="note-heading">
+            <p class="theatre-section-number" aria-hidden="true">IX</p>
+            <h2 id="note-heading">Cartographer’s Note</h2>
+            <blockquote>
+              <p>Some travelers discover that the world is a performance and conclude that nothing upon the stage truly matters.</p>
+              <p>They are mistaken.</p>
+              <p>You have never stood outside the Theatre.<br />You have never seen the world without its light, its dancers, or its moving curtain.</p>
+              <p>The play may not be reality as it is.</p>
+              <p>But the play is all we have.</p>
+              <p>Watch closely.</p>
+              <footer>— <em>The Cartographer</em></footer>
+            </blockquote>
+          </section>
+
+          <section class="theatre-lore-section theatre-contemplation" id="contemplation" aria-labelledby="contemplation-heading">
+            <p class="theatre-section-number" aria-hidden="true">X</p>
+            <h2 id="contemplation-heading">Contemplation</h2>
+            <div class="theatre-question-list">
+              <p>What is demanding your attention at this moment?</p>
+              <p>What might remain hidden just outside the light?</p>
+              <p>Where are you clinging to a scene that has already begun to change?</p>
+            </div>
+          </section>
+
+          <section class="theatre-newsletter" aria-labelledby="theatre-newsletter-heading">
+            <p class="theatre-section-number" aria-hidden="true">✦</p>
+            <h2 id="theatre-newsletter-heading"><a href="https://substack.com/@adrianschug">Follow me on Substack</a> or subscribe to my newsletter to participate in The Realm.</h2>
+            <div class="newsletter-embed">
+              <script async data-uid="1137d771f3" src="https://adrian-schug.kit.com/1137d771f3/index.js"></script>
+            </div>
+          </section>
+
+          <footer class="theatre-article__footer">
+            <span aria-hidden="true">◉</span>
+            <a href="../index.html#realm-map">Return to the map</a>
+            <span aria-hidden="true">◉</span>
+          </footer>
+        </article>
+      </div>
     </main>
   </body>
 </html>
